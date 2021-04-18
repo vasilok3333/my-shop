@@ -9,7 +9,9 @@ class App extends React.Component {
     super();
     this.state = {
       products: data.products,
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : [],
       price: "",
       sort: "",
       company: "",
@@ -18,6 +20,7 @@ class App extends React.Component {
     this.filterCompanyProducts = this.filterCompanyProducts.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+    this.createOrder = this.createOrder.bind(this);
   }
 
   sortProducts(event) {
@@ -56,7 +59,6 @@ class App extends React.Component {
   }
 
   addToCart(product) {
-    console.log(product);
 
     let cartItems = this.state.cartItems.slice();
     console.log(cartItems);
@@ -74,21 +76,29 @@ class App extends React.Component {
     this.setState({
       cartItems,
     });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
 
   removeFromCart(product) {
     let cartItems = this.state.cartItems.slice();
-   
+
     this.setState({
       cartItems: cartItems.filter((item) => item.id !== product.id),
-    })
+    });
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify(cartItems.filter((item) => item.id !== product.id))
+    );
   }
 
+  createOrder(order) {
+    alert(`Дякуємо за Ваше замовлення. Замовлення для ${order.name} успішно оброблене`);
+  }
   render() {
     return (
       <div className="grid-container">
         <header>
-          <a href="/">Viktoriia Online Store</a>
+          <a href="/">Online Phone Store</a>
         </header>
         <main>
           <div className="content">
@@ -109,6 +119,7 @@ class App extends React.Component {
               <Cart
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
               />
             </div>
           </div>
