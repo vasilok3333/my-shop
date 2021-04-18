@@ -1,0 +1,57 @@
+.cart {
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.cartTitle {
+    border-bottom: .1rem solid rgb(201, 194, 194);
+}
+
+.cartItems {
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+
+.cartItems img {
+    width: 7rem;
+}
+
+.cartItems li {
+    display: flex;
+}
+
+.cartItems div {
+    padding: 0.5rem;
+}
+
+.button {
+    padding: 1rem;
+    border: 0.1rem #c0c0c0 solid;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:hover {
+    border: 0.1rem #808080 solid
+}
+
+.button.primary {
+background-color:yellow;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+.total > div, 
+.total > button {
+    flex: 1;
+}
