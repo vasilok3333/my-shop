@@ -10,7 +10,7 @@
 
 .products li {
     flex: 1 1 29rem;
-    height: 47rem;
+    max-height: 47rem;
     padding: 1rem;
     margin: 1rem;
 }
@@ -23,13 +23,13 @@
 }
 
 .product img {
-    max-width: 37rem;
-    max-height: 37rem;
+    max-width: 27rem;
+    max-height: 27rem;
 }
 
 .productPrice {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -40,6 +40,27 @@
 
 .productPrice div {
     font-size: 2rem;
+}
+.productDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 96vh;
+}
+
+.productDetails img {
+    max-width: 46rem;
+    max-height: 100vh;
+    margin: 0 auto;
+}
+
+.productDetailsInfo {
+  flex: 1 1;
+  margin: 1rem;
+}
+
+.buttonClose {
+
 }
 
 .button {
