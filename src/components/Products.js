@@ -32,7 +32,7 @@ export default class Products extends Component {
     console.log(this.state);
     const { product } = this.state;
    
-
+    console.log(process.env.PUBLIC_URL);
     return (
       <div>
         {this.props.products.length > 0 ? (
@@ -47,7 +47,7 @@ export default class Products extends Component {
                         this.openModal(product);
                       }}
                     >
-                      <img src={product.img} alt={product.title}></img>
+                      <img src={process.env.PUBLIC_URL + product.img} alt={product.title}></img>
                       <p>{product.title}</p>
                     </a>
                     <div className={s.productPrice}>
@@ -72,16 +72,13 @@ export default class Products extends Component {
         )}
 
         {product && (
-          <Modal classNames={{
-            overlay: 'customOverlay',
-            modal: 'customModal',
-          }} isOpen={true} onRequestClose={this.closeModal}>
+          <Modal isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
               <button className={s.buttonClose} onClick={this.closeModal}>
                 X
               </button>
               <div className={s.productDetails}>
-              <img src={product.img} alt={product.title}></img>
+              <img src={process.env.PUBLIC_URL + product.img} alt={product.title}></img>
                 <div className={s.productDetailsInfo}>
                 
                     <p><strong>{product.title}</strong></p>

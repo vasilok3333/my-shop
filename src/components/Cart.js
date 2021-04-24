@@ -58,7 +58,7 @@ export default class Cart extends Component {
                 {cartItems.map((item) => (
                   <li key={item.id}>
                     <div>
-                      <img src={item.img} alt={item.title}></img>
+                      <img src={process.env.PUBLIC_URL + item.img} alt={item.title}></img>
                     </div>
                     <div>{item.title}</div>
                     <div className={s.right}>
@@ -137,7 +137,7 @@ export default class Cart extends Component {
                               Замовити
                             </button>
                           </li>
-                        </ul>
+                         </ul>
                       </form>
                     </div>
                   </Fade>
