@@ -35,7 +35,7 @@ export default class Cart extends Component {
 
   render() {
     const { cartItems, removeFromCart } = this.props;
-    console.log(this.props);
+
 
     return (
       <div>
