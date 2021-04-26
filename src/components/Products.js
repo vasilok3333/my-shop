@@ -32,7 +32,7 @@ export default class Products extends Component {
     console.log(this.state);
     const { product } = this.state;
    
-    console.log(process.env.PUBLIC_URL);
+   
     return (
       <div>
         {this.props.products.length > 0 ? (
