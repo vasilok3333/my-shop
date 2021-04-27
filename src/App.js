@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   filterCompanyProducts(event) {
-    console.log(event.target.value);
+  
     if (event.target.value === "all") {
       this.setState({
         company: event.target.value,

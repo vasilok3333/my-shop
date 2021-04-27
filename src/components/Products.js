@@ -4,13 +4,15 @@ import formatCurrency from "../util";
 import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
+import { fetchProducts } from "../redux/actions/productActions";
 
 const uniqid = require('uniqid');
 
 Modal.setAppElement('#root');
 
 
-export default class Products extends Component {
+
+class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +21,16 @@ export default class Products extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+  componentDidMount() {
+    async () => {
+    const res = await fetch("/api/products");
+    const data = await res.json();
+    this.props.addProducts(data);
+    }
+  }
+
+  
 
   openModal(product) {
     this.setState({ product });
@@ -35,6 +47,7 @@ export default class Products extends Component {
    
     return (
       <div>
+        {}
         {this.props.products.length > 0 ? (
           <Fade bottom cascade>
             <ul className={s.products}>
@@ -112,3 +125,18 @@ export default class Products extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  products: state.products.items,
+
+});
+
+const mapDispatchToProps = dispatch => ({
+  addProducts: data => dispatch(fetchProducts(data))
+})
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  )(Products);
