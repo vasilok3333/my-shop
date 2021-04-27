@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 import { fetchProducts } from "../redux/actions/productActions";
+import { connect } from "react-redux";
 
 const uniqid = require('uniqid');
 
@@ -23,14 +24,11 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    async () => {
-    const res = await fetch("/api/products");
-    const data = await res.json();
-    this.props.addProducts(data);
-    }
+    
+    fetch("/api/products").then(response => response.json()
+    .then(result => this.props.addProducts(result)));  
   }
 
-  
 
   openModal(product) {
     this.setState({ product });
@@ -41,18 +39,16 @@ class Products extends Component {
   }
 
   render() {
-    console.log(this.state);
-    const { product } = this.state;
    
-   
+  console.log(this.props.products)
     return (
       <div>
         {}
-        {this.props.products.length > 0 ? (
+        {this.props.products ? (
           <Fade bottom cascade>
             <ul className={s.products}>
               {this.props.products.map((product) => (
-                <li key={product.id}>
+                <li key={product._id}>
                   <div className={s.product}>
                     <a
                       href={"#" + product.id}
@@ -84,31 +80,31 @@ class Products extends Component {
           </div>
         )}
 
-        {product && (
+       {/*  {this.state.product && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
               <button className={s.buttonClose} onClick={this.closeModal}>
                 X
               </button>
-              <div className={s.productDetails}>
-              <img src={process.env.PUBLIC_URL + product.img} alt={product.title}></img>
-                <div className={s.productDetailsInfo}>
+              <div className={s.this.state.productDetails}>
+              <img src={process.env.PUBLIC_URL + this.state.product.img} alt={this.state.product.title}></img>
+                <div className={s.this.state.productDetailsInfo}>
                 
-                    <p><strong>{product.title}</strong></p>
+                    <p><strong>{this.state.product.title}</strong></p>
               
-                  <p>{product.info}</p>
+                  <p>{this.state.product.info}</p>
                   Колір телефона:{" "}
-                  {product.color.map((color) => (
+                  {this.state.product.color.map((color) => (
                     <span>
                       <button key={uniqid()} className={s.button}>{color}</button>
                     </span>
                   ))}
-                  <div className={s.productPrice}>
-                    <div>{formatCurrency(product.price)}</div>
+                  <div className={s.this.state.productPrice}>
+                    <div>{formatCurrency(this.state.product.price)}</div>
 
                     <button
                       onClick={() => {
-                        this.props.addToCart(product);
+                        this.props.addToCart(this.state.product);
                         this.closeModal();
                       }}
                       className={`${s.button} ${s.primary}`}
@@ -120,23 +116,14 @@ class Products extends Component {
               </div>
             </Zoom>
           </Modal>
-        )}
+        )} */}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.products.items,
-
-});
-
-const mapDispatchToProps = dispatch => ({
-  addProducts: data => dispatch(fetchProducts(data))
-})
 
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-  )(Products);
+
+
+export default Products;

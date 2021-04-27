@@ -14,12 +14,12 @@ mongoose.connect("mongodb://localhost/my-online-shop-db", {
 });
 
 const Product = mongoose.model("products", new mongoose.Schema({
-    id: { type: String, default: shortid.generate },
+    _id: { type: String, default: shortid.generate },
     title: String,
     img: String,
     price: Number,
     company: String,
-    color: [String],
+    /* color: [String], */
     info: String,
 }));
 
@@ -39,7 +39,8 @@ app.delete("/api/products/:id", async (req, res) => {
     res.send(deletedProduct);
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
+console.log(process.env.PORT);
 
 app.listen(port, () => console.log('serve at local host 3000 '));
 

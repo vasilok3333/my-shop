@@ -56,7 +56,7 @@ export default class Cart extends Component {
             <Fade left cascade>
               <ul className={s.cartItems}>
                 {cartItems.map((item) => (
-                  <li key={item.id}>
+                  <li key={item._id}>
                     <div>
                       <img src={process.env.PUBLIC_URL + item.img} alt={item.title}></img>
                     </div>

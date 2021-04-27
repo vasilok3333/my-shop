@@ -3,6 +3,8 @@ import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
 import data from "./data.json";
+import { fetchProducts } from "./redux/actions/productActions";
+import { connect } from "react-redux";
 
 class App extends React.Component {
   constructor() {
@@ -112,7 +114,8 @@ class App extends React.Component {
               />
               <Products
                 addToCart={this.addToCart}
-                products={this.state.products}
+                products={this.props.products}
+                addProducts={this.props.addProducts}
               />
             </div>
             <div className="sidebar">
@@ -131,4 +134,17 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  products: state.products.items,
+
+});
+
+const mapDispatchToProps = dispatch => ({
+  addProducts: data => dispatch(fetchProducts(data))
+})
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  )(App);
