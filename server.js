@@ -39,7 +39,7 @@ app.delete("/api/products/:id", async (req, res) => {
     res.send(deletedProduct);
 })
 
-const port = process.env.PORT || 5006;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log('serve at local host 3000 '));
 
