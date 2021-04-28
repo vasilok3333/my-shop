@@ -3,7 +3,7 @@ import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
 import data from "./data.json";
-import { fetchProducts } from "./redux/actions/productActions";
+import { fetchProducts, filterProducts, sortProducts } from "./redux/actions/productActions";
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -18,47 +18,11 @@ class App extends React.Component {
       sort: "",
       company: "",
     };
-    this.sortProducts = this.sortProducts.bind(this);
-    this.filterCompanyProducts = this.filterCompanyProducts.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
     this.createOrder = this.createOrder.bind(this);
   }
 
-  sortProducts(event) {
-    const sort = event.target.value;
-
-    this.setState((state) => ({
-      sort: sort,
-      products: [...this.state.products].sort((a, b) =>
-        sort === "lowest"
-          ? a.price - b.price
-          : sort === "highest"
-          ? b.price - a.price
-          : b.id - a.id
-      ),
-    }));
-  }
-
-  filterCompanyProducts(event) {
-  
-    if (event.target.value === "all") {
-      this.setState({
-        company: event.target.value,
-        products: data.products,
-      });
-    } else {
-      this.setState({
-        company: event.target.value,
-        products: data.products.filter(
-          (product) =>
-            product.company
-              .toUpperCase()
-              .indexOf(event.target.value.toUpperCase()) >= 0
-        ),
-      });
-    }
-  }
 
   addToCart(product) {
 
@@ -106,16 +70,18 @@ class App extends React.Component {
           <div className="content">
             <div className="main">
               <Filter
-                count={this.state.products.length}
-                sort={this.state.sort}
-                company={this.state.company}
-                sortProducts={this.sortProducts}
-                filterCompanyProducts={this.filterCompanyProducts}
+                sort={this.props.sort}
+                products={this.props.products}
+                company={this.props.company}
+                sortProducts={this.props.sortProducts}
+                filterProducts={this.props.filterProducts}
+                filteredProducts={this.props.filteredProducts}
               />
               <Products
                 addToCart={this.addToCart}
                 products={this.props.products}
                 addProducts={this.props.addProducts}
+                filteredProducts={this.props.filteredProducts}
               />
             </div>
             <div className="sidebar">
@@ -136,11 +102,17 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   products: state.products.items,
+  filteredProducts: state.products.filteredItems,
+  sort: state.products.sort,
+  company: state.products.company
+
 
 });
 
 const mapDispatchToProps = dispatch => ({
-  addProducts: data => dispatch(fetchProducts(data))
+  addProducts: data => dispatch(fetchProducts(data)),
+  filterProducts: (value) => dispatch(filterProducts(value)),
+  sortProducts: value => dispatch(sortProducts(value))
 })
 
 

@@ -40,14 +40,13 @@ class Products extends Component {
 
   render() {
    
-  console.log(this.props.products)
     return (
       <div>
         {}
-        {this.props.products ? (
+        {this.props.filteredProducts ? (
           <Fade bottom cascade>
             <ul className={s.products}>
-              {this.props.products.map((product) => (
+              {this.props.filteredProducts.map((product) => (
                 <li key={product._id}>
                   <div className={s.product}>
                     <a
@@ -87,7 +86,7 @@ class Products extends Component {
               </button>
               <div className={s.this.state.productDetails}>
               <img src={process.env.PUBLIC_URL + this.state.product.img} alt={this.state.product.title}></img>
-                <div className={s.this.state.productDetailsInfo}>
+                <div className={s.productDetailsInfo}>
                 
                     <p><strong>{this.state.product.title}</strong></p>
               
@@ -98,7 +97,7 @@ class Products extends Component {
                       <button key={uniqid()} className={s.button}>{color}</button>
                     </span>
                   ))}
-                  <div className={s.this.state.productPrice}>
+                  <div className={s.productPrice}>
                     <div>{formatCurrency(this.state.product.price)}</div>
 
                     <button
