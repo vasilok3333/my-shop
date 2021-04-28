@@ -75,12 +75,11 @@ class Products extends Component {
           </Fade>
         ) : (
           <div className={s.emptyList}>
-            За заданими параметрами нічого не знайдено. Попробуйте змінити
-            параметри фільтру
+         Loading.......
           </div>
         )}
 
-       {/*  {this.state.product && (
+        {this.state.product && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
               <button className={s.buttonClose} onClick={this.closeModal}>
@@ -116,7 +115,7 @@ class Products extends Component {
               </div>
             </Zoom>
           </Modal>
-        )} */}
+        )}
       </div>
     );
   }

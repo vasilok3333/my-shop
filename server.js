@@ -19,7 +19,7 @@ const Product = mongoose.model("products", new mongoose.Schema({
     img: String,
     price: Number,
     company: String,
-    /* color: [String], */
+    color: [String],
     info: String,
 }));
 
