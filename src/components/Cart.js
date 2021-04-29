@@ -22,6 +22,8 @@ export default class Cart extends Component {
     });
   }
 
+
+
   createOrder(e) {
     e.preventDefault();
     const order = {
@@ -36,14 +38,13 @@ export default class Cart extends Component {
   render() {
     const { cartItems, removeFromCart } = this.props;
 
-
     return (
       <div>
         {cartItems.length === 0 ? (
           <div className={`${s.cart} ${s.cartTitle}`}>Ваша корзина пуста</div>
         ) : (
           <div className={`${s.cart} ${s.cartTitle}`}>{`У Вас в корзині ${
-            cartItems.length
+            cartItems.reduce((a,c) => a + c.count, 0)
           }
                    ${
                      cartItems.length.toString().split().pop() === "1"
@@ -58,14 +59,17 @@ export default class Cart extends Component {
                 {cartItems.map((item) => (
                   <li key={item._id}>
                     <div>
-                      <img src={process.env.PUBLIC_URL + item.img} alt={item.title}></img>
+                      <img
+                        src={process.env.PUBLIC_URL + item.img}
+                        alt={item.title}
+                      ></img>
                     </div>
                     <div>{item.title}</div>
                     <div className={s.right}>
                       {formatCurrency(item.price)} X {item.count}
                       <button
                         className={s.button}
-                        onClick={() => removeFromCart(item)}
+                        onClick={() => this.props.removeFromCart(item._id)}
                       >
                         Видалити
                       </button>
@@ -137,7 +141,7 @@ export default class Cart extends Component {
                               Замовити
                             </button>
                           </li>
-                         </ul>
+                        </ul>
                       </form>
                     </div>
                   </Fade>

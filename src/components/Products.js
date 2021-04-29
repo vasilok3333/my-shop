@@ -84,7 +84,7 @@ class Products extends Component {
               <button className={s.buttonClose} onClick={this.closeModal}>
                 X
               </button>
-              <div className={s.this.state.productDetails}>
+              <div className={s.productDetails}>
               <img src={process.env.PUBLIC_URL + this.state.product.img} alt={this.state.product.title}></img>
                 <div className={s.productDetailsInfo}>
                 
