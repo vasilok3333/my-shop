@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, SORT_PRODUCTS_PRICE, FILTER_PRODUCTS_COMPANY, ADD_TO_CART, REMOVE_FROM_CART } from "../types";
+import { FETCH_PRODUCTS, SORT_PRODUCTS_PRICE, FILTER_PRODUCTS_COMPANY } from "../types";
 
 export const fetchProducts = (data) => ({
   type: FETCH_PRODUCTS,
@@ -15,14 +15,6 @@ export const sortProducts = (value) => ({
   sort: value,
 })
 
-export const addToCart = product => ({
-  type: ADD_TO_CART,
-  product,
-})
 
-export const removeFromCart = id => ({
-  type: REMOVE_FROM_CART,
-  id,
-})
 
 

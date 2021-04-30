@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../types.js";
+import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART } from "../types.js";
 
 export const cartReducer = (
   state = { cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]") },
@@ -25,16 +25,20 @@ export const cartReducer = (
       localStorage.setItem("cartItems", JSON.stringify(items));
       return {
         cartItems: items,
-          };
-      
+      };
     case REMOVE_FROM_CART:
       const items2 = [...state.cartItems].filter(
-        (item) => item._id != action.id
+        (item) => item._id !== action.id
       );
       localStorage.setItem("cartItems", JSON.stringify(items2));
       return {
         cartItems: items2,
       };
+    case CLEAR_CART:
+      localStorage.clear("cartItems");
+      return {
+        cartItems: [],
+      }
   }
 
   return state;

@@ -4,8 +4,7 @@ import formatCurrency from "../util";
 import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
-import { fetchProducts } from "../redux/actions/productActions";
-import { connect } from "react-redux";
+
 
 const uniqid = require('uniqid');
 
@@ -24,9 +23,10 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    
-    fetch("/api/products").then(response => response.json()
-    .then(result => this.props.addProducts(result)));  
+    debugger;
+ /*    fetch("/api/products").then(response => response.json()
+    .then(result => this.props.addProducts(result)));   */
+    this.props.addProducts(this.props.data);
   }
 
 
@@ -39,7 +39,7 @@ class Products extends Component {
   }
 
   render() {
-   
+   console.log(this.props.filteredProducts)
     return (
       <div>
         {}

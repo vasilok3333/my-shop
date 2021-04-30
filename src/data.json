@@ -1,7 +1,7 @@
 {
   "products": [   
     {
-       "id": 1,
+       "_id": 1,
        "title": "Nokia Lumia",
        "img": "/img/product-1.png",
        "price": 10,
@@ -13,7 +13,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 2,
+       "_id": 2,
        "title": "Samsung S7",
        "img": "/img/product-2.png",
        "price": 16,
@@ -25,7 +25,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 3,
+       "_id": 3,
        "title": "HTC 10 - Black",
        "img": "/img/product-3.png",
        "price": 8,
@@ -37,7 +37,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 4,
+       "_id": 4,
        "title": "HTC 10 - White",
        "img": "/img/product-4.png",
        "price": 18,
@@ -49,7 +49,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 5,
+       "_id": 5,
        "title": "HTC Desire 626s",
        "img": "/img/product-5.png",
        "price": 24,
@@ -61,7 +61,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 6,
+       "_id": 6,
        "title": "Vintage Iphone",
        "img": "/img/product-6.png",
        "price": 17,
@@ -73,7 +73,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 7,
+       "_id": 7,
        "title": "Iphone 7",
        "img": "/img/product-7.png",
        "price": 30,
@@ -85,7 +85,7 @@
        "color": ["green", "black", "white"]
     },   
     {
-       "id": 8,
+       "_id": 8,
        "title": "Smashed Iphone",
        "img": "/img/product-8.png",
        "price": 2,
@@ -97,7 +97,7 @@
        "color": ["green", "black", "white"]
     },
     {
-      "id": 9,
+      "_id": 9,
       "title": "Nokia Lumia",
       "img": "/img/product-1.png",
       "price": 10,
@@ -109,7 +109,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 10,
+      "_id": 10,
       "title": "Samsung S7",
       "img": "/img/product-2.png",
       "price": 16,
@@ -121,7 +121,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 11,
+      "_id": 11,
       "title": "HTC 10 - Black",
       "img": "/img/product-3.png",
       "price": 8,
@@ -133,7 +133,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 12,
+      "_id": 12,
       "title": "HTC 10 - White",
       "img": "/img/product-4.png",
       "price": 18,
@@ -145,7 +145,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 13,
+      "_id": 13,
       "title": "HTC Desire 626s",
       "img": "/img/product-5.png",
       "price": 24,
@@ -157,7 +157,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 14,
+      "_id": 14,
       "title": "Vintage Iphone",
       "img": "/img/product-6.png",
       "price": 17,
@@ -169,7 +169,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 15,
+      "_id": 15,
       "title": "Iphone 7",
       "img": "/img/product-7.png",
       "price": 30,
@@ -181,7 +181,7 @@
       "color": ["green", "black", "white"]
    },   
    {
-      "id": 16,
+      "_id": 16,
       "title": "Smashed Iphone",
       "img": "/img/product-8.png",
       "price": 2,
