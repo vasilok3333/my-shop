@@ -2,9 +2,11 @@ import React from "react";
 import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import data from "./data.json";
-import { fetchProducts, filterProducts, sortProducts, addToCart, removeFromCart } from "./redux/actions/productActions";
-
+import { fetchProducts, filterProducts, sortProducts } from "./redux/actions/productActions";
+import { addToCart, clearCart, removeFromCart } from "./redux/actions/cartActions";
+import { createOrder, clearOrder } from "./redux/actions/orderActions";
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -12,6 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="grid-container">
+        
         <header>
           <a href="/">Online Phone Store</a>
         </header>
@@ -31,13 +34,17 @@ class App extends React.Component {
                 products={this.props.products}
                 addProducts={this.props.addProducts}
                 filteredProducts={this.props.filteredProducts}
+                data={data.products}
               />
             </div>
             <div className="sidebar">
               <Cart
                 cartItems={this.props.cartItems}
                 removeFromCart={this.props.removeFromCart}
-                createOrder={this.createOrder}
+                createOrder={this.props.createOrder}
+                order={this.props.order}
+                clearOrder={this.props.clearOrder}
+                clearCart={this.props.clearCart}
               />
             </div>
           </div>
@@ -54,9 +61,9 @@ const mapStateToProps = state => ({
   filteredProducts: state.products.filteredItems,
   sort: state.products.sort,
   company: state.products.company,
-  cartItems: state.cart.cartItems
-
-
+  cartItems: state.cart.cartItems,
+  order: state.order.order,
+  
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -64,7 +71,11 @@ const mapDispatchToProps = dispatch => ({
   filterProducts: (value) => dispatch(filterProducts(value)),
   sortProducts: value => dispatch(sortProducts(value)),
   addToCart: product => dispatch(addToCart(product)),
-  removeFromCart: id => dispatch(removeFromCart(id))
+  removeFromCart: id => dispatch(removeFromCart(id)),
+  createOrder: data => dispatch(createOrder(data)),
+  clearOrder: () => dispatch(clearOrder()),
+  clearCart: () => dispatch(clearCart()),
+
 })
 
 
