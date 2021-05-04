@@ -60,17 +60,19 @@ export default class Cart extends Component {
 
   render() {
     const { cartItems, removeFromCart, order } = this.props;
-
+    const count = cartItems.reduce((a, c) => a + c.count, 0);
     return (
       <div>
-        {cartItems.length === 0 ? (
+        {
+          
+          cartItems.length === 0 ? (
           <div className={`${s.cart} ${s.cartTitle}`}>Ваша корзина пуста</div>
         ) : (
           <div
             className={`${s.cart} ${s.cartTitle}`}
-          >{`У Вас в корзині ${cartItems.reduce((a, c) => a + c.count, 0)}
+          >{`У Вас в корзині ${count}
                    ${
-                     cartItems.length.toString().split().pop() === "1"
+                     count.toString().split().pop() === "1"
                        ? `телефон`
                        : `телефонів`
                    }`}</div>
@@ -120,7 +122,7 @@ export default class Cart extends Component {
         )}
         <div>
           <div className={s.cart}>
-            <Fade left cascade>
+            <Fade right cascade>
               <ul className={s.cartItems}>
                 {cartItems.map((item) => (
                   <li key={item._id}>
