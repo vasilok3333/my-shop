@@ -61,16 +61,16 @@ class App extends React.Component {
                 filteredProducts={this.props.filteredProducts}
                 data={data.products}
               /> </Route>
-              {/*  <div className="sidebar">
-              <Cart
+               <div className="sidebar">
+              <Route exact path="/my-shop/cart"><Cart
                 cartItems={this.props.cartItems}
                 removeFromCart={this.props.removeFromCart}
                 createOrder={this.props.createOrder}
                 order={this.props.order}
                 clearOrder={this.props.clearOrder}
                 clearCart={this.props.clearCart}
-              />
-            </div> */}
+              /></Route>
+            </div>
             </main>
             <Route exact path="/my-shop/guarantee"><Guarantee/></Route>
            <Route path="/my-shop"><Footer /></Route> 
