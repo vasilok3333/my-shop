@@ -1,0 +1,42 @@
+.layoutBox {
+    display: flex;
+    height: 100vh;
+    margin-top: 50px;
+}
+
+.layoutBox_textAside {
+margin-right: 40px;
+min-width: 17%;
+}
+
+.layoutBox_textAside ul {
+    list-style-type: none;
+ 
+}
+
+.layoutBox_textAside a {
+    color: rgb(53, 51, 51, 0.5);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.layoutBox_textAside a:hover {
+    color: black;
+}
+
+.serviceBox, .dostavkaBox {
+    font-size: 14px;
+    font-weight: 600;
+    
+
+}
+
+h1 {
+    color: black;
+    font-size: 30px;
+    font-weight: 800;
+
+}
+
+
+

@@ -84,6 +84,7 @@ background-color:yellow;
     border-radius: 50%;
     text-align: center;
     cursor:pointer;
+    min-width: 50px;
 }
 
 .selectedPage {

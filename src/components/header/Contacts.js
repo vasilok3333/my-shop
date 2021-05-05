@@ -1,23 +1,26 @@
 import React, { Component } from "react";
 import s from "./Header.module.css";
+import { BrowserRouter as Router, Route, Link, Switch, BrowserRouter } from "react-router-dom";
+
 
 export default class Contacts extends Component {
   render() {
     return (
+   
       <div className={s.contacts}>
         <div className={s.links}>
           <ul className={s.menu}>
             <li>
-              <a href="/guarantee">Гарантія та сервіс</a>
+              <Link to="/my-shop/guarantee">Гарантія та сервіс</Link>
             </li>
             <li>
-              <a href="/payment">Доставка та оплата</a>
+              <Link to="/my-shop">Доставка та оплата</Link>
             </li>
             <li>
-              <a href="/blog"> Статті</a>
+              <Link to="/my-shop"> Статті</Link>
             </li>
             <li>
-              <a href="/contacts">Контакти</a>
+              <Link to="/my-shop">Контакти</Link>
             </li>
           </ul>
         </div>
@@ -60,7 +63,8 @@ export default class Contacts extends Component {
           <a className={s.ua} href="">UA</a>
           <a href="">RU</a>
         </div>
-      </div>
+          </div>
+      
     );
   }
 }

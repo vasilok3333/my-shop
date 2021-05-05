@@ -17,7 +17,7 @@ export default class Navbar extends Component {
     return (
       <div className={s.navbar}>
         <div className={s.logo}>
-          <a href="/">
+          <a href="/my-shop">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 37.51449 18.5394"
@@ -47,7 +47,7 @@ export default class Navbar extends Component {
           </a>
         </div>
         <div className={s.catalogProducts}>
-          <a className={s.btnProducts} href="">
+          <a className={s.btnProducts} href="/products">
             <svg
               className={s.gridIcon}
               width="21px"

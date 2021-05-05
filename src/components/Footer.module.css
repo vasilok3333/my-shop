@@ -33,7 +33,7 @@
 
 .footerInfo {
   margin-top: 50px;
-  margin-left: 10%;
+  margin-left: 20%;
   display: flex;
 }
 
@@ -45,7 +45,12 @@
 }
 
 .footerInfo div {
-  margin-right: 30px;
+    margin-right: 20px;
+  width: 150px;
+}
+
+.location {
+    width: 250px !important;
 }
 
 .logo {

@@ -29,6 +29,7 @@ firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <Provider store={store}>
     <App />
     </Provider>

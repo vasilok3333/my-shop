@@ -24,27 +24,31 @@ import {
 
 import { connect } from "react-redux";
 import Header from "./components/header/Header";
-import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Guarantee from "./components/Guarantee/Guarantee";
 
 class App extends React.Component {
   render() {
     return (
-      <div className="grid-container">
-      
-          <Header
-            showLoginModal={this.props.showLoginModal}
-            showRegistrModal={this.props.showRegistrModal}
-            isLogged={this.props.isLogged}
-            login={this.props.login}
-            changeAuth={this.props.changeAuth}
-          />
-     
-        <main>
-         
-              <Main
+      <Router>
+        <Switch>
+          <div className="grid-container">
+            <Route path="/my-shop">
+              {" "}
+              <Header
+                showLoginModal={this.props.showLoginModal}
+                showRegistrModal={this.props.showRegistrModal}
+                isLogged={this.props.isLogged}
+                login={this.props.login}
+                changeAuth={this.props.changeAuth}
+              />{" "}
+            </Route>
+
+            <main>
+              <Route exact path="/my-shop"><Main
                 sort={this.props.sort}
                 products={this.props.products}
                 company={this.props.company}
@@ -56,8 +60,8 @@ class App extends React.Component {
                 addProducts={this.props.addProducts}
                 filteredProducts={this.props.filteredProducts}
                 data={data.products}
-              />
-            {/*  <div className="sidebar">
+              /> </Route>
+              {/*  <div className="sidebar">
               <Cart
                 cartItems={this.props.cartItems}
                 removeFromCart={this.props.removeFromCart}
@@ -67,19 +71,22 @@ class App extends React.Component {
                 clearCart={this.props.clearCart}
               />
             </div> */}
-        
-        </main>
-
-        <Footer/>
-        <Modal
-          isLoginForm={this.props.isLoginForm}
-          isRegistrForm={this.props.isRegistrForm}
-          showLoginModal={this.props.showLoginModal}
-          showRegistrModal={this.props.showRegistrModal}
-          changeAuth={this.props.changeAuth}
-          isLogged={this.props.isLogged}
-        />
-      </div>
+            </main>
+            <Route exact path="/my-shop/guarantee"><Guarantee/></Route>
+           <Route path="/my-shop"><Footer /></Route> 
+           <Route path="/my-shop"><Modal
+              isLoginForm={this.props.isLoginForm}
+              isRegistrForm={this.props.isRegistrForm}
+              showLoginModal={this.props.showLoginModal}
+              showRegistrModal={this.props.showRegistrModal}
+              changeAuth={this.props.changeAuth}
+              isLogged={this.props.isLogged}
+             
+            />  </Route>
+         
+          </div>
+        </Switch>
+      </Router>
     );
   }
 }
