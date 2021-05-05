@@ -75,14 +75,13 @@ margin-right: 35px;
     width: 30px;
     height: 30px;
 }
-.logo {
-    width: 200px;
 
-}
 
 .navbar {
 display: flex;
 align-items: center;
+background-color: #2A2A29;width: 100%;
+z-index: 2;
 
 }
 
@@ -90,6 +89,7 @@ align-items: center;
     padding: 0px;
     margin: 0;
     margin-left: 40px;
+    width: 200px;
 }
 
 .catalogProducts {
@@ -136,7 +136,7 @@ position: relative;
     padding: 15px 40px;
 margin-right:  10px !important;
 background-color: #464441;
-color: black;
+color: white;
 position: relative;
 }
 

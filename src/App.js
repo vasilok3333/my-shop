@@ -27,6 +27,7 @@ import Header from "./components/header/Header";
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   render() {
@@ -69,7 +70,7 @@ class App extends React.Component {
         
         </main>
 
-        <footer>All right is reserved</footer>
+        <Footer/>
         <Modal
           isLoginForm={this.props.isLoginForm}
           isRegistrForm={this.props.isRegistrForm}
