@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import style from "./Filter.module.css";
+import s from "./Main.module.css";
 
 export default class Filter extends Component {
   render() {
     return (
-      <div className={style.filter}>
-        <div className={style.filterResult}>
+      <div className={s.filter}>
+        <div className={s.filterResult}>
           {this.props.filteredProducts && this.props.filteredProducts.length > 0
             ? this.props.filteredProducts.length + " products"
             : null}{" "}
         </div>
-        <div className={style.filterSort}>
+        <div className={s.filterSort}>
           Order{" "}
           <select
             value={this.props.sort}
@@ -21,7 +21,7 @@ export default class Filter extends Component {
             <option value="highest">highest</option>
           </select>
         </div>
-        <div className={style.filterCompany}>
+        <div className={s.filterCompany}>
           Filter{" "}
           <select
             value={this.props.company}

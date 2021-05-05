@@ -1,34 +1,30 @@
 import React, { Component } from "react";
 import s from "./Products.module.css";
-import formatCurrency from "../util";
+import formatCurrency from "../../util";
 import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
 
+const uniqid = require("uniqid");
 
-const uniqid = require('uniqid');
-
-Modal.setAppElement('#root');
-
-
+Modal.setAppElement("#root");
 
 class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
       product: null,
+      currentPage: 1,
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
-    debugger;
- /*    fetch("/api/products").then(response => response.json()
+    /*    fetch("/api/products").then(response => response.json()
     .then(result => this.props.addProducts(result)));   */
     this.props.addProducts(this.props.data);
   }
-
 
   openModal(product) {
     this.setState({ product });
@@ -38,15 +34,36 @@ class Products extends Component {
     this.setState({ product: null });
   }
 
+  changePage(page) {
+    
+    this.setState({
+      currentPage: page
+    })
+
+  }
+
   render() {
-   console.log(this.props.filteredProducts)
+   
+    const filterProducts = this.props.filteredProducts;
+    const currentPage = this.state.currentPage;
+    const sizePage = 5;
+    const totalPages = Math.ceil(
+      filterProducts && filterProducts.length / sizePage
+    );
+
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pages.push(i);
+    }
+
     return (
       <div>
         {}
-        {this.props.filteredProducts ? (
+        {filterProducts ? (
           <Fade bottom cascade>
             <ul className={s.products}>
-              {this.props.filteredProducts.map((product) => (
+              {filterProducts.slice((currentPage - 1) * sizePage, currentPage * sizePage)
+              .map((product) => (
                 <li key={product._id}>
                   <div className={s.product}>
                     <a
@@ -55,7 +72,10 @@ class Products extends Component {
                         this.openModal(product);
                       }}
                     >
-                      <img src={process.env.PUBLIC_URL + product.img} alt={product.title}></img>
+                      <img
+                        src={process.env.PUBLIC_URL + product.img}
+                        alt={product.title}
+                      ></img>
                       <p>{product.title}</p>
                     </a>
                     <div className={s.productPrice}>
@@ -73,9 +93,7 @@ class Products extends Component {
             </ul>
           </Fade>
         ) : (
-          <div className={s.emptyList}>
-         Loading.......
-          </div>
+          <div className={s.emptyList}>Loading.......</div>
         )}
 
         {this.state.product && (
@@ -85,16 +103,21 @@ class Products extends Component {
                 X
               </button>
               <div className={s.productDetails}>
-              <img src={process.env.PUBLIC_URL + this.state.product.img} alt={this.state.product.title}></img>
+                <img
+                  src={process.env.PUBLIC_URL + this.state.product.img}
+                  alt={this.state.product.title}
+                ></img>
                 <div className={s.productDetailsInfo}>
-                
-                    <p><strong>{this.state.product.title}</strong></p>
-              
+                  <p>
+                    <strong>{this.state.product.title}</strong>
+                  </p>
                   <p>{this.state.product.info}</p>
                   Колір телефона:{" "}
                   {this.state.product.color.map((color) => (
                     <span>
-                      <button key={uniqid()} className={s.button}>{color}</button>
+                      <button key={uniqid()} className={s.button}>
+                        {color}
+                      </button>
                     </span>
                   ))}
                   <div className={s.productPrice}>
@@ -115,13 +138,18 @@ class Products extends Component {
             </Zoom>
           </Modal>
         )}
+        <div className={s.pagination}>
+          <div>
+            {pages.length > 1 && pages.map((e) => {
+              console.log(currentPage);
+              console.log(e);
+              return <span className={currentPage == e && s.selectedPage} onClick={ e => this.changePage(e.target.innerText)}>{e}</span>;
+            })}
+          </div>
+        </div>
       </div>
     );
   }
 }
-
-
-
-
 
 export default Products;
