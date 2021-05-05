@@ -9,7 +9,7 @@ export default class Footer extends Component {
         <div className={s.footerTop}>
           <div className={s.footerLogo}>
             <div className={s.logo}>
-              <a href="/">
+              <a href="/my-shop">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 37.51449 18.5394"
@@ -164,7 +164,7 @@ export default class Footer extends Component {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className={s.location}>
               <a href="#">
                 <img src={ourShops} className={s.ourShops} alt="location" />
                             <span className={`${s.shops } ${s.title}`}>Наші магазини</span>

@@ -3,13 +3,19 @@ import Filter from "./Filter";
 import Products from "./Products";
 import s from "./Main.module.css";
 import Sidebar from "./Sidebar";
+import Slider from "./Slider";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+
 
 
 export default class Main extends Component {
     render() {
-        return (
+      return (
+        <Router>
             <div className={s.mainContent}>
-            <Sidebar />
+              <Route path="/my-shop"><Sidebar/></Route>
+         {/*    <Slider /> */}
             <div className={s.mainWrapper}>
                  <Filter
                 sort={this.props.sort}
@@ -28,6 +34,7 @@ export default class Main extends Component {
               />
               </div>
             </div>
+          </Router>
         )
     }
 }
