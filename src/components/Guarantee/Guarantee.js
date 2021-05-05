@@ -33,7 +33,7 @@ export default class Guarantee extends Component {
               <Route exact path="/my-shop/guarantee">
                 <Service />
               </Route>
-              <Route exact path="/my-shop/dostavka"><Dostavka /></Route>
+              <Route path="/my-shop/dostavka"><Dostavka /></Route>
               <Route exact path="/my-shop/offer"></Route>
               <Route exact path="/my-shop/exchange"></Route>
               <Route exact path="/my-shop/contacts"></Route>

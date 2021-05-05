@@ -48,42 +48,54 @@ class App extends React.Component {
             </Route>
 
             <main>
-              <Route exact path="/my-shop"><Main
-                sort={this.props.sort}
-                products={this.props.products}
-                company={this.props.company}
-                sortProducts={this.props.sortProducts}
-                filterProducts={this.props.filterProducts}
-                filteredProducts={this.props.filteredProducts}
-                addToCart={this.props.addToCart}
-                products={this.props.products}
-                addProducts={this.props.addProducts}
-                filteredProducts={this.props.filteredProducts}
-                data={data.products}
-              /> </Route>
-               <div className="sidebar">
-              <Route exact path="/my-shop/cart"><Cart
-                cartItems={this.props.cartItems}
-                removeFromCart={this.props.removeFromCart}
-                createOrder={this.props.createOrder}
-                order={this.props.order}
-                clearOrder={this.props.clearOrder}
-                clearCart={this.props.clearCart}
-              /></Route>
-            </div>
+              <Route exact path="/my-shop">
+                <Main
+                  sort={this.props.sort}
+                  products={this.props.products}
+                  company={this.props.company}
+                  sortProducts={this.props.sortProducts}
+                  filterProducts={this.props.filterProducts}
+                  filteredProducts={this.props.filteredProducts}
+                  addToCart={this.props.addToCart}
+                  products={this.props.products}
+                  addProducts={this.props.addProducts}
+                  filteredProducts={this.props.filteredProducts}
+                  data={data.products}
+                />{" "}
+              </Route>
+              <div className="sidebar">
+                <Route exact path="/my-shop/cart">
+                  <Cart
+                    cartItems={this.props.cartItems}
+                    removeFromCart={this.props.removeFromCart}
+                    createOrder={this.props.createOrder}
+                    order={this.props.order}
+                    clearOrder={this.props.clearOrder}
+                    clearCart={this.props.clearCart}
+                  />
+                </Route>
+              </div>
             </main>
-            <Route exact path="/my-shop/guarantee"><Guarantee/></Route>
-           <Route path="/my-shop"><Footer /></Route> 
-           <Route path="/my-shop"><Modal
-              isLoginForm={this.props.isLoginForm}
-              isRegistrForm={this.props.isRegistrForm}
-              showLoginModal={this.props.showLoginModal}
-              showRegistrModal={this.props.showRegistrModal}
-              changeAuth={this.props.changeAuth}
-              isLogged={this.props.isLogged}
-             
-            />  </Route>
-         
+            <Route exact path="/my-shop/guarantee">
+              <Guarantee />
+            </Route>
+
+            <Route exact path="/my-shop/guarantee">
+              <Guarantee />
+            </Route>
+            <Route path="/my-shop">
+              <Footer />
+            </Route>
+            <Route path="/my-shop">
+              <Modal
+                isLoginForm={this.props.isLoginForm}
+                isRegistrForm={this.props.isRegistrForm}
+                showLoginModal={this.props.showLoginModal}
+                showRegistrModal={this.props.showRegistrModal}
+                changeAuth={this.props.changeAuth}
+                isLogged={this.props.isLogged}
+              />{" "}
+            </Route>
           </div>
         </Switch>
       </Router>
