@@ -6,5 +6,13 @@ export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const CREATE_ORDER = "CREATE_ORDER";
 export const CLEAR_ORDER = "CLEAR_ORDER";
 export const CLEAR_CART = "CLEAR_CART";
+export const SHOW_LOGIN = "SHOW_LOGIN";
+export const SHOW_REGISTR= "SHOW_REGISTR";
+export const CHANGE_AUTH = "CHANGE_AUTH";
+
+
+
+
+
 
 

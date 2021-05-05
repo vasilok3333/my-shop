@@ -1,15 +1,13 @@
 .products {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 
 .products li {
-    flex: 1 1 19rem;
     max-height: 47rem;
     padding: 1rem;
     margin: 1rem;
@@ -77,6 +75,26 @@
 
 .button.primary {
 background-color:yellow;
+}
+
+.pagination span {
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    text-align: center;
+    cursor:pointer;
+}
+
+.selectedPage {
+    background-color: #FDBF00;
+}
+
+.pagination {
+
+    margin: 20px auto;
+    text-align: center;
+
 }
 
 

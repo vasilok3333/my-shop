@@ -13,6 +13,7 @@ export default class Cart extends Component {
       name: "",
       email: "",
       address: "",
+      isShowCart: true,
     };
     this.handleInput = this.handleInput.bind(this);
     this.createOrder = this.createOrder.bind(this);
@@ -22,7 +23,6 @@ export default class Cart extends Component {
   closeModal() {
     this.props.clearOrder();
     this.props.clearCart();
-
   }
 
   handleInput(e) {
@@ -52,25 +52,20 @@ export default class Cart extends Component {
         this.props.createOrder(order);
             localStorage.clear("cartItems");
       }); */
-    
-  this.props.createOrder(order);
+
+    this.props.createOrder(order);
   }
-
-
 
   render() {
     const { cartItems, removeFromCart, order } = this.props;
     const count = cartItems.reduce((a, c) => a + c.count, 0);
-    return (
+    return this.state.isShowCart ? (
       <div>
-        {
-          
-          cartItems.length === 0 ? (
+        
+        {cartItems.length === 0 ? (
           <div className={`${s.cart} ${s.cartTitle}`}>Ваша корзина пуста</div>
         ) : (
-          <div
-            className={`${s.cart} ${s.cartTitle}`}
-          >{`У Вас в корзині ${count}
+          <div className={`${s.cart} ${s.cartTitle}`}>{`У Вас в корзині ${count}
                    ${
                      count.toString().split().pop() === "1"
                        ? `телефон`
@@ -78,10 +73,11 @@ export default class Cart extends Component {
                    }`}</div>
         )}
         {order && (
-          <Modal isOpen={true}
-          onRequestClose={this.closeModal}>
+          <Modal isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
-              <button className={s.closeModal} onClick={this.closeModal}>X</button>
+              <button className={s.closeModal} onClick={this.closeModal}>
+                X
+              </button>
               <div className={s.orderDetails}>
                 <div className={s.succesMessage}>
                   <h3>Ваше замовлення успішно оброблено</h3>
@@ -102,13 +98,13 @@ export default class Cart extends Component {
 
                     <li>
                       <div>CartItems:</div>
-                      <div>{order.cartItems.map(item =>
-                       (
-                        <div key={item._id}>
-                          {item.count} X {item.title}
-                        </div>
-                      ))
-                      }</div>
+                      <div>
+                        {order.cartItems.map((item) => (
+                          <div key={item._id}>
+                            {item.count} X {item.title}
+                          </div>
+                        ))}
+                      </div>
                     </li>
                     <li>
                       <div>Total:</div>
@@ -149,78 +145,80 @@ export default class Cart extends Component {
           </div>
 
           <div className={s.cart}>
-            {cartItems.length > 0 ? (
-              <div className={s.total}>
-                <div>
-                  Сума до оплати:{" "}
-                  {formatCurrency(
-                    cartItems.reduce((a, c) => a + c.price * c.count, 0)
+            <Fade right cascade>
+              {cartItems.length > 0 ? (
+                <div className={s.total}>
+                  <div>
+                    Сума до оплати:{" "}
+                    {formatCurrency(
+                      cartItems.reduce((a, c) => a + c.price * c.count, 0)
+                    )}
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => {
+                        this.setState({
+                          showCartForm: true,
+                        });
+                      }}
+                      className={`${s.button} ${s.primary} `}
+                    >
+                      Оплатити
+                    </button>
+                  </div>
+                  {this.state.showCartForm && (
+                    <Fade right cascade>
+                      <div className={s.cart}>
+                        <form onSubmit={this.createOrder}>
+                          <ul className={s.formContainer}>
+                            <li>
+                              <label>Email</label>
+                              <input
+                                name="email"
+                                type="email"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <label>Name</label>
+                              <input
+                                name="name"
+                                type="text"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <label>Address</label>
+                              <input
+                                name="address"
+                                type="text"
+                                required
+                                onChange={this.handleInput}
+                              ></input>
+                            </li>
+                            <li>
+                              <button
+                                type="submit"
+                                className={`${s.button} ${s.primary}`}
+                              >
+                                Замовити
+                              </button>
+                            </li>
+                          </ul>
+                        </form>
+                      </div>
+                    </Fade>
                   )}
                 </div>
-                <div>
-                  <button
-                    onClick={() => {
-                      this.setState({
-                        showCartForm: true,
-                      });
-                    }}
-                    className={`${s.button} ${s.primary} `}
-                  >
-                    Оплатити
-                  </button>
-                </div>
-                {this.state.showCartForm && (
-                  <Fade right cascade>
-                    <div className={s.cart}>
-                      <form onSubmit={this.createOrder}>
-                        <ul className={s.formContainer}>
-                          <li>
-                            <label>Email</label>
-                            <input
-                              name="email"
-                              type="email"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                            <label>Name</label>
-                            <input
-                              name="name"
-                              type="text"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                            <label>Address</label>
-                            <input
-                              name="address"
-                              type="text"
-                              required
-                              onChange={this.handleInput}
-                            ></input>
-                          </li>
-                          <li>
-                            <button
-                              type="submit"
-                              className={`${s.button} ${s.primary}`}
-                            >
-                              Замовити
-                            </button>
-                          </li>
-                        </ul>
-                      </form>
-                    </div>
-                  </Fade>
-                )}
-              </div>
-            ) : (
-              "Не вибрано жодного телефону"
-            )}
+              ) : (
+                "Не вибрано жодного телефону"
+              )}
+            </Fade>
           </div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
