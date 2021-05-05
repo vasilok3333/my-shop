@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png";
 import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   
@@ -47,7 +48,7 @@ export default class Navbar extends Component {
           </a>
         </div>
         <div className={s.catalogProducts}>
-          <a className={s.btnProducts} href="/products">
+          <a className={s.btnProducts} href="/my-shop">
             <svg
               className={s.gridIcon}
               width="21px"
@@ -192,7 +193,7 @@ export default class Navbar extends Component {
           </a>
         </div>
         <div className={s.cart}>
-          <a className={s.cartLink} href="">
+          <Link className={s.cartLink} to="/my-shop/cart">
             <svg
               className={s.cartIcon}
               version="1.1"
@@ -241,7 +242,7 @@ export default class Navbar extends Component {
               <g></g>
             </svg>
             <span className={s.cartCount}></span>
-          </a>
+          </Link>
         </div>
       </div>
     );

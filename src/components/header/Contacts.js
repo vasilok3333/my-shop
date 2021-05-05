@@ -14,7 +14,7 @@ export default class Contacts extends Component {
               <Link to="/my-shop/guarantee">Гарантія та сервіс</Link>
             </li>
             <li>
-              <Link to="/my-shop">Доставка та оплата</Link>
+              <Link to="/my-shop/dostavka">Доставка та оплата</Link>
             </li>
             <li>
               <Link to="/my-shop"> Статті</Link>
