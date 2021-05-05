@@ -1,0 +1,114 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a29;
+  min-height: 200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: #fdbf00;
+}
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTop {
+  display: flex;
+  width: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.footerInfo {
+  margin-top: 50px;
+  margin-left: 10%;
+  display: flex;
+}
+
+.footerInfo ul {
+  padding: 0;
+  margin-right: 20px;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.footerInfo div {
+  margin-right: 30px;
+}
+
+.logo {
+  padding: 0px;
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 200px;
+}
+
+.links {
+  list-style-type: none;
+  display: flex;
+}
+.links li {
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-right: 10px !important;
+  background-color: #464441;
+  color: black;
+  position: relative;
+  cursor: pointer;
+}
+
+.facebookLink:hover .facebookIcon {
+  fill: #fdbf00;
+}
+
+.youtubeLink:hover .youtubeIcon {
+  fill: #fdbf00;
+}
+
+.instagramLink:hover .instagramIcon {
+  fill: #fdbf00;
+}
+
+.facebookLink:hover,
+.youtubeLink:hover,
+.instagramLink:hover {
+  box-shadow: 0px 0px 12px hsl(229, 88%, 44%);
+}
+
+.footerContacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.ourShops {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.clients {
+  margin-bottom: 20px;
+}
+
+.call {
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.email {
+  font-weight: 700;
+  border-bottom: 2px solid white;
+}

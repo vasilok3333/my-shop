@@ -84,7 +84,7 @@ class Products extends Component {
                         onClick={() => this.props.addToCart(product)}
                         className={`${s.button} ${s.primary}`}
                       >
-                        Add to card
+                        Додати в корзину
                       </button>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ class Products extends Component {
                       }}
                       className={`${s.button} ${s.primary}`}
                     >
-                      Add to card
+                      Додати в корзину
                     </button>
                   </div>
                 </div>
