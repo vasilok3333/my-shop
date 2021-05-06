@@ -27,7 +27,7 @@ import Header from "./components/header/Header";
 import "firebase/auth";
 import "firebase/firestore";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import Guarantee from "./components/Guarantee/Guarantee";
 
 class App extends React.Component {
@@ -76,13 +76,11 @@ class App extends React.Component {
                 </Route>
               </div>
             </main>
-            <Route exact path="/my-shop/guarantee">
+            <Route path="/my-shop/guarantee">
               <Guarantee />
             </Route>
 
-            <Route exact path="/my-shop/guarantee">
-              <Guarantee />
-            </Route>
+           
             <Route path="/my-shop">
               <Footer />
             </Route>
