@@ -12,10 +12,10 @@ class SliderBox extends Component {
   render() {
     return (
       <div className={s.carousel}>
-        <Carousel interval={5000}>
+        <Carousel className={s.carouselContent} interval={5000}>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="block w-100"
               src={img1}
               alt="First slide"
             />
@@ -26,7 +26,7 @@ class SliderBox extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="block w-100"
               src={img2}
               alt="Second slide"
             />
@@ -38,7 +38,7 @@ class SliderBox extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="block w-100"
               src={img3}
               alt="Third slide"
             />
@@ -52,7 +52,7 @@ class SliderBox extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="block w-100"
               src={img4}
               alt="First slide"
             />

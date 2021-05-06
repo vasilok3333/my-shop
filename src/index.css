@@ -6,8 +6,8 @@ html {
 }
 
 body, #root {
-  height: 100vh;
   margin: 0;
+  background-color: rgb(233, 240, 240);
 }
 
 body, input, select, textarea, button {

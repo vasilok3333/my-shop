@@ -1,59 +1,78 @@
 .mainContent {
-    display: flex;
-    margin-top: 15px;
-    width: 100%;
-    min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.mainWrapper{
-    width: 80%;
+.mainWrapper {
+  width: 80%;
 }
 
 .filter {
-    display: flex;
-    padding: 1rem;
-    justify-content: space-between;
-    max-height: 60px;
-    border: .1rem solid rgb(201, 194, 194);
-    border-radius: 5px;
-    margin-right: 5px;
-    min-width: 100%;
-
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  max-height: 60px;
+  border: 0.1rem solid rgb(201, 194, 194);
+  border-radius: 5px;
+  margin-right: 5px;
+  min-width: 100%;
 }
 .carousel {
-    width: 100%;
-    margin-right: 10px;
-    height: auto;
-    margin-bottom: 10px;
+  width: 58%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 500px;
+}
+
+.carouselContent {
+  height: 100%;
+}
+
+.carouselContent img {
+  max-height: 500px;
 }
 
 .sidebar {
-    width: 20%;
-    min-width: 300px;
-    margin: 0 10px;
+  width: 20%;
+  margin: 0 10px;
+}
+
+.sidebarRight {
+  width: 19%;
 }
 
 .sidebarMenu {
-    border: 1px solid rgb(201, 194, 194);
-    padding: 50px;
-    list-style-type: none;
-    width: 100%;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px;
-
+  border: 1px solid rgb(201, 194, 194);
+  padding: 50px;
+  list-style-type: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  height: 500px;
 }
 
-.sidebarMenu li a{
-    text-decoration: none;
-    color: black;
+.sidebarMenu li a {
+  text-decoration: none;
+  color: black;
 }
 
-.sidebarMenu li:hover a{
-    color:orange;
+.sidebarMenu li:hover a {
+  color: orange;
 }
 
 .sidebarMenu li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
+.sale {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.sale img {
+    width: 100%;
+    height: 500px;
+    display: block;
+}

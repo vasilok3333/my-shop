@@ -11,6 +11,7 @@ import {
   Link,
   withRouter,
 } from "react-router-dom";
+import Sale from "./Sale";
 
 class Main extends Component {
   render() {
@@ -40,6 +41,7 @@ class Main extends Component {
             </Route>
             <Route path="/my-shop">
               <SliderBox />
+              <Sale />
             </Route>
           </Switch>
         </div>
