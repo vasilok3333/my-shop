@@ -60,7 +60,7 @@ class Products extends Component {
       <div>
         {}
         {filterProducts ? (
-          <Fade bottom cascade>
+          <Fade top cascade>
             <ul className={s.products}>
               {filterProducts.slice((currentPage - 1) * sizePage, currentPage * sizePage)
               .map((product) => (

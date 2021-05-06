@@ -48,7 +48,7 @@ export default class Navbar extends Component {
           </a>
         </div>
         <div className={s.catalogProducts}>
-          <Link className={s.btnProducts} to="/my-shop/products">
+          <a className={s.btnProducts} href="/my-shop/products">
             <svg
               className={s.gridIcon}
               width="21px"
@@ -82,7 +82,7 @@ export default class Navbar extends Component {
               </g>
             </svg>
             <span>Каталог товарів</span>
-          </Link>
+          </a>
         </div>
 
         <div className={s.actionBar}>
