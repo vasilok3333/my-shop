@@ -10,6 +10,7 @@ import firebase from "firebase";
 // Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
