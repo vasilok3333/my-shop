@@ -21,18 +21,10 @@ body, input, select, textarea, button {
 }
 
 
-a:hover {
-  color: rgb(255, 255, 10)
-}
 
 
-footer {
-  background-color: rgb(4, 56, 228);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+
+
 
 
 main {
@@ -52,5 +44,9 @@ width: 100%;
 
 a {
   text-decoration: none;
+}
+
+.sidebar {
+  width: 100%;
 }
 
