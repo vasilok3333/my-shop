@@ -8,18 +8,18 @@ export default class Guarantee extends Component {
   render() {
     return (
       <Router>
-        <Switch>
+    
           <div className={s.layoutBox}>
             <div className={s.layoutBox_textAside}>
               <ul>
                 <li>
-                  <Link to="/my-shop/guarantee">Гарантія та сервіс</Link>
+                  <Link to="/my-shop/guarantee/service">Гарантія та сервіс</Link>
                 </li>
                 <li>
-                  <Link to="/my-shop/dostavka">Доставка</Link>
+                  <Link to="/my-shop/guarantee/dostavka">Доставка</Link>
                 </li>
                 <li>
-                  <Link to="/my-shop/offer">Гарантія та сервіс</Link>
+                  <Link to="/my-shop/offer">Договір оферти</Link>
                 </li>
                 <li>
                   <Link to="/my-shop/exchange">Обмін та повернення</Link>
@@ -28,18 +28,20 @@ export default class Guarantee extends Component {
                   <Link to="/my-shop/contacts">Контакти</Link>
                 </li>
               </ul>
-            </div>
+          </div>
+          <Switch>
             <div className={s.layoutBox_textContent}>
-              <Route exact path="/my-shop/guarantee">
+              <Route exact path="/my-shop/guarantee/service">
                 <Service />
               </Route>
-              <Route path="/my-shop/dostavka"><Dostavka /></Route>
+              <Route exact path="/my-shop/guarantee/dostavka"><Dostavka /></Route>
               <Route exact path="/my-shop/offer"></Route>
               <Route exact path="/my-shop/exchange"></Route>
               <Route exact path="/my-shop/contacts"></Route>
             </div>
+            </Switch>
           </div>
-        </Switch>
+ 
       </Router>
     );
   }
