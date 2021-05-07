@@ -1,25 +1,30 @@
 {
   "files": {
-    "main.css": "/my-shop/static/css/main.d6335964.chunk.css",
-    "main.js": "/my-shop/static/js/main.5c3d0ee7.chunk.js",
-    "main.js.map": "/my-shop/static/js/main.5c3d0ee7.chunk.js.map",
+    "main.css": "/my-shop/static/css/main.43cf2499.chunk.css",
+    "main.js": "/my-shop/static/js/main.cab545e9.chunk.js",
+    "main.js.map": "/my-shop/static/js/main.cab545e9.chunk.js.map",
     "runtime-main.js": "/my-shop/static/js/runtime-main.9eb91e14.js",
     "runtime-main.js.map": "/my-shop/static/js/runtime-main.9eb91e14.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/my-shop/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.86b18cb3.chunk.js": "/my-shop/static/js/2.86b18cb3.chunk.js",
-    "static/js/2.86b18cb3.chunk.js.map": "/my-shop/static/js/2.86b18cb3.chunk.js.map",
+    "static/js/2.bac9f5df.chunk.js": "/my-shop/static/js/2.bac9f5df.chunk.js",
+    "static/js/2.bac9f5df.chunk.js.map": "/my-shop/static/js/2.bac9f5df.chunk.js.map",
     "index.html": "/my-shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.d6335964.chunk.css.map": "/my-shop/static/css/main.d6335964.chunk.css.map",
-    "static/js/2.86b18cb3.chunk.js.LICENSE.txt": "/my-shop/static/js/2.86b18cb3.chunk.js.LICENSE.txt",
+    "static/css/main.43cf2499.chunk.css.map": "/my-shop/static/css/main.43cf2499.chunk.css.map",
+    "static/js/2.bac9f5df.chunk.js.LICENSE.txt": "/my-shop/static/js/2.bac9f5df.chunk.js.LICENSE.txt",
+    "static/media/POCCO.aad8709d.png": "/my-shop/static/media/POCCO.aad8709d.png",
+    "static/media/REDMI.a2c41ea2.png": "/my-shop/static/media/REDMI.a2c41ea2.png",
+    "static/media/REDMI10.6b2e457c.png": "/my-shop/static/media/REDMI10.6b2e457c.png",
+    "static/media/galaxyA.99e28715.png": "/my-shop/static/media/galaxyA.99e28715.png",
     "static/media/location.1636acf4.png": "/my-shop/static/media/location.1636acf4.png",
-    "static/media/logo.b865d97e.png": "/my-shop/static/media/logo.b865d97e.png"
+    "static/media/logo.b865d97e.png": "/my-shop/static/media/logo.b865d97e.png",
+    "static/media/sale.a2e0b019.jpg": "/my-shop/static/media/sale.a2e0b019.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9eb91e14.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.86b18cb3.chunk.js",
-    "static/css/main.d6335964.chunk.css",
-    "static/js/main.5c3d0ee7.chunk.js"
+    "static/js/2.bac9f5df.chunk.js",
+    "static/css/main.43cf2499.chunk.css",
+    "static/js/main.cab545e9.chunk.js"
   ]
 }
