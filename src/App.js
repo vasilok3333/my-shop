@@ -6,9 +6,14 @@ import Main from "./components/Main/Main";
 import "bootstrap/dist/css/bootstrap.min.css";
 import data from "./data.json";
 import {
+  
   fetchProducts,
   filterProducts,
   sortProducts,
+  addToFavourite,
+  addToCompare,
+  removeFromFavourite,
+  removeFromCompare
 } from "./redux/actions/productActions";
 import {
   addToCart,
@@ -31,18 +36,13 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Guarantee from "./components/Guarantee/Guarantee";
 
 class App extends React.Component {
-
   componentDidMount() {
     /*    fetch("/api/products").then(response => response.json()
     .then(result => this.props.addProducts(result)));   */
     this.props.addProducts(data.products);
-  };
-
+  }
 
   render() {
-
-    
-  
     return (
       <Router>
         <div className="grid-container">
@@ -53,6 +53,9 @@ class App extends React.Component {
             isLogged={this.props.isLogged}
             login={this.props.login}
             changeAuth={this.props.changeAuth}
+            cartItems={this.props.cartItems}
+            favouritesProducts={this.props.favouritesProducts}
+            compareProducts={this.props.compareProducts}
           />{" "}
           <Switch>
             <Route path="/my-shop/guarantee">
@@ -85,6 +88,13 @@ class App extends React.Component {
                   addProducts={this.props.addProducts}
                   filteredProducts={this.props.filteredProducts}
                   data={data.products}
+                  cartItems={this.props.cartItems}
+                  addToFavourite={this.props.addToFavourite}
+                  addToCompare={this.props.addToCompare}
+                  removeFromCompare={this.props.removeFromCompare}
+                  removeFromFavourite={this.props.removeFromFavourite}
+                  favouritesProducts={this.props.favouritesProducts}
+                  compareProducts={this.props.compareProducts}
                 />{" "}
               </main>
             </Route>
@@ -115,6 +125,8 @@ const mapStateToProps = (state) => ({
   isRegistrForm: state.form.isRegistrForm,
   isLogged: state.form.isLogged,
   login: state.form.login,
+  favouritesProducts: state.products.favouritesProducts,
+  compareProducts: state.products.compareProducts,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -129,6 +141,10 @@ const mapDispatchToProps = (dispatch) => ({
   showLoginModal: () => dispatch(showLoginModal()),
   showRegistrModal: () => dispatch(showRegistrModal()),
   changeAuth: (email) => dispatch(changeAuth(email)),
+  addToFavourite: (product) => dispatch(addToFavourite(product)),
+  removeFromFavourite: id => dispatch(removeFromFavourite(id)),
+  addToCompare: (product) => dispatch(addToCompare(product)),
+  removeFromCompare: id => dispatch(removeFromCompare(id),)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

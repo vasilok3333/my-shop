@@ -194,6 +194,10 @@ position: relative;
 .cartCount {
     color: black;
     margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    right:25%;
+    transform: translateY(-50%);
   
 }
 

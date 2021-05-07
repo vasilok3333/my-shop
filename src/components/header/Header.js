@@ -14,6 +14,9 @@ export default class Header extends Component {
           isLogged={this.props.isLogged}
           login={this.props.login}
           changeAuth={this.props.changeAuth}
+          cartItems={this.props.cartItems}
+          favouritesProducts={this.props.favouritesProducts}
+          compareProducts={this.props.compareProducts}
         />
       </div>
     );

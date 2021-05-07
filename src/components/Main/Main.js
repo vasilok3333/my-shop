@@ -13,6 +13,8 @@ import {
 } from "react-router-dom";
 import Sale from "./Sale";
 import Leaders from "./Leaders";
+import Favourite from "./Favourite";
+import Compare from "./Compare";
 
 class Main extends Component {
   render() {
@@ -21,6 +23,22 @@ class Main extends Component {
         <div className={s.mainContent}>
           <Sidebar />
           <Switch>
+            <Route path="/my-shop/favourites">
+              <Favourite
+                addToCart={this.props.addToCart}
+                removeFromFavourite={this.props.removeFromFavourite}
+                favouritesProducts={this.props.favouritesProducts}
+                addToCompare={this.props.addToCompare}
+              />
+            </Route>
+            <Route path="/my-shop/compare">
+              <Compare
+                addToCart={this.props.addToCart}
+                removeFromCompare={this.props.removeFromCompare}
+                compareProducts={this.props.compareProducts}
+                addToFavourite={this.props.addToFavourite}
+              />
+            </Route>
             <Route path="/my-shop/products">
               <div className={s.mainWrapper}>
                 <Filter
@@ -37,6 +55,8 @@ class Main extends Component {
                   addProducts={this.props.addProducts}
                   filteredProducts={this.props.filteredProducts}
                   data={this.props.data}
+                  addToFavourite={this.props.addToFavourite}
+                  addToCompare={this.props.addToCompare}
                 />
               </div>
             </Route>
@@ -45,7 +65,12 @@ class Main extends Component {
               <Sale />
             </Route>
           </Switch>
-          <Leaders       filteredProducts={this.props.filteredProducts}/>
+          <Leaders
+            addToCart={this.props.addToCart}
+            filteredProducts={this.props.filteredProducts}
+            cartItems={this.props.cartItems}
+            addToFavourite={this.props.addToFavourite}
+          />
         </div>
       </Router>
     );

@@ -135,7 +135,7 @@ export default class Navbar extends Component {
           <span className={s.titleUser}>
             {this.props.isLogged ? (<div> {this.props.login} <span onClick={this.props.changeAuth} className={s.signOut}>Вийти</span> </div>) : null}
           </span>
-          <a className={s.compare} href="">
+          <a className={s.compare} href="/my-shop/compare">
             <svg
               className={s.compareIcon}
               id="Outline"
@@ -149,8 +149,9 @@ export default class Navbar extends Component {
               <path d="m400.732 192.12a8.006 8.006 0 0 0 -8.667 7.273l-2.789 31.878a8 8 0 0 0 7.273 8.667q.356.03.706.03a8 8 0 0 0 7.961-7.3l2.789-31.878a8 8 0 0 0 -7.273-8.67z" />
               <path d="m395.154 255.877a8 8 0 1 0 7.273 8.666 8 8 0 0 0 -7.273-8.666z" />
             </svg>
+            <span className={s.cartCount}>{this.props.compareProducts.length > 0 ? this.props.compareProducts.length : null }</span>
           </a>
-          <a className={s.favorites} href="">
+          <a className={s.favorites} href="/my-shop/favourites">
             <svg
               className={s.favoritesIcon}
               version="1.1"
@@ -190,6 +191,7 @@ export default class Navbar extends Component {
               <g></g>
               <g></g>
             </svg>
+            <span className={s.cartCount}>{this.props.favouritesProducts.length > 0 ? this.props.favouritesProducts.length : null }</span>
           </a>
         </div>
         <div className={s.cart}>
@@ -241,7 +243,7 @@ export default class Navbar extends Component {
               <g></g>
               <g></g>
             </svg>
-            <span className={s.cartCount}></span>
+            <span className={s.cartCount}>{this.props.cartItems.length > 0 ? this.props.cartItems.length : null }</span>
           </Link>
         </div>
       </div>
