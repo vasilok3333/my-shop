@@ -35,6 +35,8 @@ class Products extends Component {
   }
 
   render() {
+
+    console.log(this.props)
     const filterProducts = this.props.filteredProducts;
     const currentPage = this.state.currentPage;
     const sizePage = 5;
@@ -46,7 +48,7 @@ class Products extends Component {
     for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
     }
-   
+
     return (
       <div>
         {}
@@ -126,7 +128,11 @@ class Products extends Component {
                         </button>
                       </div>
                       <div className={s.actionBar}>
-                        <a href="#">
+                        <a onClick={(e) => {
+                        this.props.addToCompare(product);
+                        e.preventDefault();
+                        }}
+                        href="#">
                           <svg
                             className={`${s.icon} ${s.compareIcon}`}
                             id="Outline"
@@ -141,7 +147,13 @@ class Products extends Component {
                             <path d="m395.154 255.877a8 8 0 1 0 7.273 8.666 8 8 0 0 0 -7.273-8.666z" />
                           </svg>
                         </a>
-                        <a href="#">
+                        <a
+                          onClick={(e) => {
+                            this.props.addToFavourite(product);
+                            e.preventDefault();
+                          }}
+                          href="#"
+                        >
                           <svg
                             className={`${s.icon} ${s.favoriteIcon}`}
                             version="1.1"

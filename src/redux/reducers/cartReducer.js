@@ -26,6 +26,8 @@ export const cartReducer = (
       return {
         cartItems: items,
       };
+
+      
     case REMOVE_FROM_CART:
       const items2 = [...state.cartItems].filter(
         (item) => item._id !== action.id

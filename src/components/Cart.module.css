@@ -1,7 +1,12 @@
+ .cartBox {
+   min-height: 300px;
+ }
+ 
  .cart {
   display: flex;
   padding: 1rem;
   margin: 1rem;
+  
 }
 
 .cartTitle {

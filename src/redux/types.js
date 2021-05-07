@@ -9,7 +9,10 @@ export const CLEAR_CART = "CLEAR_CART";
 export const SHOW_LOGIN = "SHOW_LOGIN";
 export const SHOW_REGISTR= "SHOW_REGISTR";
 export const CHANGE_AUTH = "CHANGE_AUTH";
-
+export const  ADD_TO_COMPARE = "ADD_TO_COMPARE";
+export const ADD_TO_FAVOURITE = "ADD_TO_FAVOURITE"
+export const REMOVE_FROM_FAVOURITE = "REMOVE_FROM_FAVOURITE";
+export const REMOVE_FROM_COMPARE = "REMOVE_FROM_COMPARE";
 
 
 

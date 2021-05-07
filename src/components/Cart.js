@@ -60,7 +60,7 @@ export default class Cart extends Component {
     const { cartItems, removeFromCart, order } = this.props;
     const count = cartItems.reduce((a, c) => a + c.count, 0);
     return this.state.isShowCart ? (
-      <div>
+      <div className={s.cartBox}>
         
         {cartItems.length === 0 ? (
           <div className={`${s.cart} ${s.cartTitle}`}>Ваша корзина пуста</div>
