@@ -12,6 +12,7 @@ import {
   withRouter,
 } from "react-router-dom";
 import Sale from "./Sale";
+import Leaders from "./Leaders";
 
 class Main extends Component {
   render() {
@@ -44,6 +45,7 @@ class Main extends Component {
               <Sale />
             </Route>
           </Switch>
+          <Leaders       filteredProducts={this.props.filteredProducts}/>
         </div>
       </Router>
     );

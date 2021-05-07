@@ -31,7 +31,18 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Guarantee from "./components/Guarantee/Guarantee";
 
 class App extends React.Component {
+
+  componentDidMount() {
+    /*    fetch("/api/products").then(response => response.json()
+    .then(result => this.props.addProducts(result)));   */
+    this.props.addProducts(data.products);
+  };
+
+
   render() {
+
+    
+  
     return (
       <Router>
         <div className="grid-container">

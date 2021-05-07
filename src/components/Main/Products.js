@@ -20,12 +20,7 @@ class Products extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentDidMount() {
-    /*    fetch("/api/products").then(response => response.json()
-    .then(result => this.props.addProducts(result)));   */
-    this.props.addProducts(this.props.data);
-  }
-
+ 
   openModal(product) {
     this.setState({ product });
   }
@@ -55,12 +50,12 @@ class Products extends Component {
     for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
     }
-
+    console.log(filterProducts);
     return (
       <div>
         {}
         {filterProducts ? (
-          <Fade top cascade>
+          <Fade className={s.productsBox} top cascade>
             <ul className={s.products}>
               {filterProducts.slice((currentPage - 1) * sizePage, currentPage * sizePage)
               .map((product) => (
