@@ -44,6 +44,11 @@
   margin-top: 20px;
 }
 
+.footerInfo li {
+  margin-right: 20px;
+  min-width: 150px
+}
+
 
 
 

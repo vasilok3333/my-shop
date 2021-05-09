@@ -38,7 +38,7 @@ export default class Guarantee extends Component {
               <Route exact path="/my-shop/guarantee/dostavka"><Dostavka /></Route>
               <Route exact path="/my-shop/offer"></Route>
               <Route exact path="/my-shop/exchange"></Route>
-              <Route exact path="/my-shop/guarantee/contacts"> < OurContacts /></Route>
+              <Route exact path="/my-shop/guarantee/contacts"> < OurContacts isMarkerShown  /></Route>
             </div>
             </Switch>
           </div>

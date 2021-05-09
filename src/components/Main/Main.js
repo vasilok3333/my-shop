@@ -11,16 +11,16 @@ import Favourite from "./Favourite";
 import Compare from "./Compare";
 import Catalog from "./Catalog";
 
-
-
 class Main extends Component {
   render() {
     return (
       <div className={s.mainContent}>
-        <Sidebar                 filterProducts={this.props.filterProducts}
-/>
+        <Sidebar filterProducts={this.props.filterProducts} />
         <Switch>
-          <Route path="/my-shop/catalog"><Catalog  filterProducts={this.props.filterProducts}/></Route>
+          <Route path="/my-shop/catalog">
+            <Catalog filterProducts={this.props.filterProducts} />
+          </Route>
+         
           <Route path="/my-shop/favourites">
             <Favourite
               addToCart={this.props.addToCart}

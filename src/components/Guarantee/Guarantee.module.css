@@ -4,10 +4,14 @@
     margin-top: 50px;
 }
 
+
+
 .layoutBox_textAside {
 margin-right: 40px;
-min-width: 17%;
+width: 22%;
 }
+
+
 
 .layoutBox_textAside ul {
     list-style-type: none;
@@ -38,26 +42,89 @@ h1 {
 
 }
 
-.mapsBox {
-    max-width: 100%;
-border: 1px solid black;
+/* .mapsBox {
+
 display: flex;
-
-
+height: 80vh;
+width: 60vw;
+border-radius: 10px;
 }
 
-.mapWrapper {
+.contacts {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+list-style-type: none;
+text-align: center;
+margin: 100px 0;
+}
+
+
+
+ */
+
+.mapBox {
+   
+   
     display: flex;
-    min-width: 100%;
+    
+    border-radius: 10px;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    font-size: 14px;
+    color: black;
 }
 
-.maps {
-    min-width: 40%;
-    min-height: 80%;
-    z-index: 1;
-    position: static;
+
+
+  
+  .ourShops {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+
+  
+  .call {
+    
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .email {
+    font-weight: 700;
+    border-bottom: 2px solid white;
+  }
+
+  .email:hover {
+      color: rgb(207, 145, 86)
+  }
+
+
+
+.menuContacts, .location ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0 30px;
     
 }
+.title {
+    text-align: center;
+    font-weight: 600;
+    margin: 0 auto;
+   
+}
+
+.contacts a {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
 
 
 
