@@ -1,14 +1,37 @@
 import React, { Component } from "react";
 import s from "./Main.module.css";
 import formatCurrency from "../../util";
+import Modal from "react-modal";
+import Zoom from "react-reveal/Zoom";
+const uniqid = require("uniqid");
 
 class Compare extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      product: null,
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+
+
+    openModal(product) {
+      this.setState({ product });
+    }
+  
+    closeModal() {
+      this.setState({ product: null });
+    }
+
+
   render() {
     return (
       <div className={s.compareBox}>
-          <div className={s.compareTitle}>
-              ПОРІВНЯЙТЕ ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ВИБРАНИХ ТЕЛЕФОНІВ
-          </div>
+        <div className={s.compareTitle}>
+          ПОРІВНЯЙТЕ ТЕХНІЧНІ ХАРАКТЕРИСТИКИ ВИБРАНИХ ТЕЛЕФОНІВ
+        </div>
         {this.props.compareProducts.length > 0 ? (
           <ul className={s.products}>
             {this.props.compareProducts.map((product) => (
@@ -148,7 +171,7 @@ class Compare extends Component {
                       <svg
                         id="Layer_1"
                         className={`${s.icon} ${s.deleteIcon}`}
-                        enable-background="new 0 0 512 512"
+                        enableBackground="new 0 0 512 512"
                         height="20"
                         viewBox="0 0 512 512"
                         width="20"
@@ -164,18 +187,17 @@ class Compare extends Component {
                     </a>
                   </div>
                   <div className={s.specifications}>
-                  <div>camera</div>
-                <div>memory</div>
-                <div>batery</div>
-                <div>camera</div>
-                <div>width</div>
-                <div>height</div>
-                <div>camera</div>
-                <div>memory</div>
-                <div>batery</div>
+                    <div>camera</div>
+                    <div>memory</div>
+                    <div>batery</div>
+                    <div>camera</div>
+                    <div>width</div>
+                    <div>height</div>
+                    <div>camera</div>
+                    <div>memory</div>
+                    <div>batery</div>
+                  </div>
                 </div>
-                </div>
-              
               </li>
             ))}
           </ul>
@@ -183,6 +205,46 @@ class Compare extends Component {
           <div className={s.notFavourites}>
             <i>Немає телефонів для порівняння</i>
           </div>
+        )}
+        {this.state.product && (
+          <Modal isOpen={true} onRequestClose={this.closeModal}>
+            <Zoom>
+              <button className={s.buttonClose} onClick={this.closeModal}>
+                X
+              </button>
+              <div className={s.productDetails}>
+                <img
+                  src={process.env.PUBLIC_URL + this.state.product.img}
+                  alt={this.state.product.title}
+                ></img>
+                <div className={s.productDetailsInfo}>
+                  <p>
+                    <strong>{this.state.product.title}</strong>
+                  </p>
+                  <p>{this.state.product.info}</p>
+                  Колір телефона:{" "}
+                  {this.state.product.color.map((color) => (
+                    <span>
+                      <button key={uniqid()} className={s.button}>
+                        {color}
+                      </button>
+                    </span>
+                  ))}
+                  <div className={s.productPrice}>
+                    <div>{formatCurrency(this.state.product.price)}</div>
+
+                    <button
+                      onClick={() => {
+                        this.props.addToCart(this.state.product);
+                        this.closeModal();
+                      }}
+                      className={`${s.button} ${s.primary}`}
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </Zoom>
+          </Modal>
         )}
       </div>
     );

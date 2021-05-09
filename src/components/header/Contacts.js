@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import s from "./Header.module.css";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import Dostavka from "../Guarantee/Dostavka";
 
 
 export default class Contacts extends Component {
@@ -12,16 +11,16 @@ export default class Contacts extends Component {
         <div className={s.links}>
           <ul className={s.menu}>
             <li>
-              <a href="/my-shop/guarantee/service">Гарантія та сервіс</a>
+              <Link to="/my-shop/guarantee/service">Гарантія та сервіс</Link>
             </li>
             <li>
-              <a href="/my-shop/guarantee/dostavka">Доставка та оплата</a>
+              <Link to="/my-shop/guarantee/dostavka">Доставка та оплата</Link>
             </li>
             <li>
               <Link to="/my-shop"> Статті</Link>
             </li>
             <li>
-              <Link to="/my-shop">Контакти</Link>
+              <Link to="/my-shop/guarantee/contacts">Контакти</Link>
             </li>
           </ul>
         </div>

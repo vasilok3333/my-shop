@@ -15,7 +15,7 @@ export default class Leaders extends Component {
     this.state = {
       product: null,
     };
-    
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.breakPoints = [
@@ -68,7 +68,13 @@ export default class Leaders extends Component {
                     </a>
 
                     <div className={`${s.actionBar} ${s.actionBarLeader} `}>
-                      <a href="#">
+                      <a
+                        onClick={(e) => {
+                          this.props.addToCompare(product);
+                          e.preventDefault();
+                        }}
+                        href="#"
+                      >
                         <svg
                           className={`${s.icon} ${s.compareIcon} `}
                           id="Outline"

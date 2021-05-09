@@ -6,14 +6,13 @@ import Main from "./components/Main/Main";
 import "bootstrap/dist/css/bootstrap.min.css";
 import data from "./data.json";
 import {
-  
   fetchProducts,
   filterProducts,
   sortProducts,
   addToFavourite,
   addToCompare,
   removeFromFavourite,
-  removeFromCompare
+  removeFromCompare,
 } from "./redux/actions/productActions";
 import {
   addToCart,
@@ -56,6 +55,7 @@ class App extends React.Component {
             cartItems={this.props.cartItems}
             favouritesProducts={this.props.favouritesProducts}
             compareProducts={this.props.compareProducts}
+            filterProducts={this.props.filterProducts}
           />{" "}
           <Switch>
             <Route path="/my-shop/guarantee">
@@ -99,7 +99,7 @@ class App extends React.Component {
               </main>
             </Route>
           </Switch>
-          <Footer />
+          <Footer filterProducts={this.props.filterProducts} />
           <Modal
             isLoginForm={this.props.isLoginForm}
             isRegistrForm={this.props.isRegistrForm}
@@ -142,9 +142,9 @@ const mapDispatchToProps = (dispatch) => ({
   showRegistrModal: () => dispatch(showRegistrModal()),
   changeAuth: (email) => dispatch(changeAuth(email)),
   addToFavourite: (product) => dispatch(addToFavourite(product)),
-  removeFromFavourite: id => dispatch(removeFromFavourite(id)),
+  removeFromFavourite: (id) => dispatch(removeFromFavourite(id)),
   addToCompare: (product) => dispatch(addToCompare(product)),
-  removeFromCompare: id => dispatch(removeFromCompare(id),)
+  removeFromCompare: (id) => dispatch(removeFromCompare(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

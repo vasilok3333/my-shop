@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import s from "./Footer.module.css";
 import ourShops from "../assets/location.png";
+import { Link } from "react-router-dom";
+
 
 export default class Footer extends Component {
   render() {
     return (
       <div className={s.footer}>
-        <div className={s.footerTop}>
+     
           <div className={s.footerLogo}>
             <div className={s.logo}>
               <a href="/my-shop">
@@ -85,59 +87,105 @@ export default class Footer extends Component {
           </div>
           <div className={s.footerInfo}>
             <div>
-                        <a className={s.title} href="#">Клієнтам</a>
+              <a className={s.title} href="#">
+                Клієнтам
+              </a>
               <ul>
                 <li>
-                  <a href="/guarantee">Гарантія та сервіс</a>
+                  <Link to="/my-shop/guarantee/service">
+                    Гарантія та сервіс
+                  </Link>
                 </li>
                 <li>
-                  <a href="/payment">Доставка та оплата</a>
+                  <Link to="/my-shop/guarantee/dostavka">
+                    Доставка та оплата
+                  </Link>
                 </li>
                 <li>
-                  <a href="/blog"> Статті</a>
+                  <Link to="/my-shop/blog"> Статті</Link>
                 </li>
                 <li>
-                  <a href="/contacts">Контакти</a>
+                  <Link to="/my-shop/contacts">Контакти</Link>
                 </li>
               </ul>
             </div>
             <div>
-              <a className={s.title} href="#">Каталог товарів</a>
+              <a className={s.title} href="/my-shop/catalog">
+                Каталог товарів
+              </a>
               <ul>
-                <li>
-                  <a href="">Всі телефони</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Samsung</Link>
                 </li>
-                <li>
-                  <a href="">Samsung</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Xiaomi</Link>
                 </li>
-                <li>
-                  <a href="">Xiaomi</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Nokia</Link>
                 </li>
-                <li>
-                  <a href="">Nokia</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.id);
+                  }}
+                >
+                  <Link id="apple" to="/my-shop/products">
+                    Iphone
+                  </Link>
                 </li>
-                <li>
-                  <a href="">Iphone</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Htc</Link>
                 </li>
-                <li>
-                  <a href="">Motorola</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Motorola</Link>
                 </li>
-                <li>
-                  <a href="">Honor</a>
+
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Honor</Link>
                 </li>
-                <li>
-                  <a href="">Oppo</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Oppo</Link>
                 </li>
-                <li>
-                  <a href="">Redmi</a>
-                </li>
-                <li>
-                  <a href="">ZTF</a>
+                <li
+                  onClick={(e) => {
+                    this.props.filterProducts(e.target.innerText);
+                  }}
+                >
+                  <Link to="/my-shop/products">Redmi</Link>
                 </li>
               </ul>
             </div>
             <div>
-              <a className={s.title} href="#">Контакти</a>
+              <Link className={s.title} to="/my-shop/guarantee/contacts">
+                Контакти
+              </Link>
               <ul className={s.footerContacts}>
                 <li>
                   {" "}
@@ -149,7 +197,7 @@ export default class Footer extends Component {
                 </li>
                 <li>
                   <div className={s.call}>
-                    <span >Call-центр</span>
+                    <span>Call-центр</span>
                     <br />
                     <span>Пн-Пт 08:00-23:00</span>
                     <br />
@@ -159,7 +207,14 @@ export default class Footer extends Component {
                 <li>
                   <div className={s.call}>
                     <span>Email</span>
-                    <p><a className={s.email} href="mailto:freedom-mobile@gmail.com">freedom-mobile@gmail.com</a></p>
+                    <p>
+                      <a
+                        className={s.email}
+                        href="mailto:freedom-mobile@gmail.com"
+                      >
+                        freedom-mobile@gmail.com
+                      </a>
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -167,7 +222,7 @@ export default class Footer extends Component {
             <div className={s.location}>
               <a href="#">
                 <img src={ourShops} className={s.ourShops} alt="location" />
-                            <span className={`${s.shops } ${s.title}`}>Наші магазини</span>
+                <span className={`${s.shops} ${s.title}`}>Наші магазини</span>
               </a>
               <ul>
                 <li>
@@ -182,8 +237,7 @@ export default class Footer extends Component {
               </ul>
             </div>
           </div>
-        </div>
-        <div className={s.footerBottom}></div>
+        
       </div>
     );
   }

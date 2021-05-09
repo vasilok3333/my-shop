@@ -19,11 +19,12 @@ compareProducts:  JSON.parse(localStorage.getItem("compareProducts") || "[]")}, 
       };
 
     case FILTER_PRODUCTS_COMPANY:
+
       return {
         ...state,
         company: action.value,
         filteredItems:
-          action.value === "all"
+          action.value  === "all"
             ? [...state.items]
             : [...state.items].filter(
                 (item) =>

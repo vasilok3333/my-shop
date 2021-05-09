@@ -3,11 +3,12 @@ import s from "./Guarantee.module.css";
 import Service from "./Service";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Dostavka from "./Dostavka";
+import OurContacts from "./OurContacts";
 
 export default class Guarantee extends Component {
   render() {
     return (
-      <Router>
+   
     
           <div className={s.layoutBox}>
             <div className={s.layoutBox_textAside}>
@@ -25,7 +26,7 @@ export default class Guarantee extends Component {
                   <Link to="/my-shop/exchange">Обмін та повернення</Link>
                 </li>
                 <li>
-                  <Link to="/my-shop/contacts">Контакти</Link>
+                  <Link to="/my-shop/guarantee/contacts">Контакти</Link>
                 </li>
               </ul>
           </div>
@@ -37,12 +38,12 @@ export default class Guarantee extends Component {
               <Route exact path="/my-shop/guarantee/dostavka"><Dostavka /></Route>
               <Route exact path="/my-shop/offer"></Route>
               <Route exact path="/my-shop/exchange"></Route>
-              <Route exact path="/my-shop/contacts"></Route>
+              <Route exact path="/my-shop/guarantee/contacts"> < OurContacts /></Route>
             </div>
             </Switch>
           </div>
  
-      </Router>
+    
     );
   }
 }

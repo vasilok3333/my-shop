@@ -17,6 +17,7 @@ export default class Header extends Component {
           cartItems={this.props.cartItems}
           favouritesProducts={this.props.favouritesProducts}
           compareProducts={this.props.compareProducts}
+          filterProducts={this.props.filterProducts}
         />
       </div>
     );

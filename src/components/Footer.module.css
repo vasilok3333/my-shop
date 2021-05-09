@@ -1,10 +1,10 @@
 .footer {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #2a2a29;
   min-height: 200px;
-  width: 100%;
   padding: 0 20px;
+  width: 100%;
 }
 
 .footer a {
@@ -19,12 +19,12 @@
 .footerLogo {
   display: flex;
   flex-direction: column;
+  width: 20%;
+  margin-right: 20%;
+  margin-left: 5%;
 }
 
-.footerTop {
-  display: flex;
-  width: 100%;
-}
+
 
 .title {
     font-weight: 700;
@@ -33,45 +33,40 @@
 
 .footerInfo {
   margin-top: 50px;
-  margin-left: 20%;
   display: flex;
+  width: 50%;
+  justify-content: space-around;
 }
 
 .footerInfo ul {
   padding: 0;
-  margin-right: 20px;
   list-style-type: none;
   margin-top: 20px;
 }
 
-.footerInfo div {
-    margin-right: 20px;
-  width: 150px;
-}
 
-.location {
-    width: 250px !important;
-}
+
+
 
 .logo {
   padding: 0px;
   margin-top: 40px;
-  margin-left: 40px;
-  width: 200px;
+  max-width: 200px;
 }
 
 .links {
   list-style-type: none;
   display: flex;
+  padding: 10px 0;
 }
 .links li {
   border-radius: 10px;
   padding: 10px 15px;
-  margin-right: 10px !important;
   background-color: #464441;
   color: black;
   position: relative;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .facebookLink:hover .facebookIcon {
