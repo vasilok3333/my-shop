@@ -20,13 +20,15 @@ class Main extends Component {
           <Route path="/my-shop/catalog">
             <Catalog filterProducts={this.props.filterProducts} />
           </Route>
-         
+
           <Route path="/my-shop/favourites">
             <Favourite
               addToCart={this.props.addToCart}
               removeFromFavourite={this.props.removeFromFavourite}
               favouritesProducts={this.props.favouritesProducts}
               addToCompare={this.props.addToCompare}
+              compareProducts={this.props.compareProducts}
+              removeFromCompare={this.props.removeFromCompare}
             />
           </Route>
           <Route path="/my-shop/compare">
@@ -35,6 +37,8 @@ class Main extends Component {
               removeFromCompare={this.props.removeFromCompare}
               compareProducts={this.props.compareProducts}
               addToFavourite={this.props.addToFavourite}
+              removeFromFavourite={this.props.removeFromFavourite}
+              favouritesProducts={this.props.favouritesProducts}
             />
           </Route>
           <Route path="/my-shop/products">
@@ -69,6 +73,10 @@ class Main extends Component {
           cartItems={this.props.cartItems}
           addToFavourite={this.props.addToFavourite}
           addToCompare={this.props.addToCompare}
+          compareProducts={this.props.compareProducts}
+          removeFromCompare={this.props.removeFromCompare}
+          favouritesProducts={this.props.favouritesProducts}
+          removeFromFavourite={this.props.removeFromFavourite}
         />
       </div>
     );

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import s from "./Main.module.css";
 import formatCurrency from "../../util";
-import Modal from "react-modal";
-import Zoom from "react-reveal/Zoom";
-const uniqid = require("uniqid");
+import ModalProduct from "./ModalProduct";
+
+
 
 class Favourite extends Component {
 
@@ -28,6 +28,13 @@ class Favourite extends Component {
   
 
   render() {
+
+    let compareItems = [];
+
+    for (let i = 0; i < this.props.compareProducts.length; i++) {
+      compareItems.push(this.props.compareProducts[i]._id)
+    }
+
     return (
       <div className={s.favouritesBox}>
         {this.props.favouritesProducts.length > 0 ? (
@@ -57,11 +64,16 @@ class Favourite extends Component {
 
                   <div className={`${s.actionBar} `}>
                     <a href="#" onClick={(e) => {
-                        this.props.addToCompare(product);
+                         if ( compareItems.includes(product._id)){
+                          this.props.removeFromCompare(product._id)
+                        } else {
+                        this.props.addToCompare(product); }
                         e.preventDefault();
                         }}>
                       <svg
-                        className={`${s.icon} ${s.compareIcon} `}
+                        className={`${s.icon} ${s.compareIcon} ${
+                          compareItems.includes(product._id) && s.activeIcon
+                        } `}
                         id="Outline"
                         height="20"
                         width="20"
@@ -160,44 +172,9 @@ class Favourite extends Component {
           <div className={s.notFavourites}><i>На жаль, Ви ще нічого не вибрали.......</i></div>
         )}
          {this.state.product && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
-            <Zoom>
-              <button className={s.buttonClose} onClick={this.closeModal}>
-                X
-              </button>
-              <div className={s.productDetails}>
-                <img
-                  src={process.env.PUBLIC_URL + this.state.product.img}
-                  alt={this.state.product.title}
-                ></img>
-                <div className={s.productDetailsInfo}>
-                  <p>
-                    <strong>{this.state.product.title}</strong>
-                  </p>
-                  <p>{this.state.product.info}</p>
-                  Колір телефона:{" "}
-                  {this.state.product.color.map((color) => (
-                    <span>
-                      <button key={uniqid()} className={s.button}>
-                        {color}
-                      </button>
-                    </span>
-                  ))}
-                  <div className={s.productPrice}>
-                    <div>{formatCurrency(this.state.product.price)}</div>
-
-                    <button
-                      onClick={() => {
-                        this.props.addToCart(this.state.product);
-                        this.closeModal();
-                      }}
-                      className={`${s.button} ${s.primary}`}
-                    ></button>
-                  </div>
-                </div>
-              </div>
-            </Zoom>
-          </Modal>
+          <ModalProduct product={this.state.product}
+          closeModal={this.closeModal}
+          addToCart={this.props.addToCart} />
         )}
       </div>
     );

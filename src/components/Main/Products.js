@@ -3,7 +3,7 @@ import s from "./Main.module.css";
 import formatCurrency from "../../util";
 import Fade from "react-reveal/Fade";
 import Modal from "react-modal";
-import Zoom from "react-reveal/Zoom";
+import ModalProduct from "./ModalProduct";
 
 const uniqid = require("uniqid");
 
@@ -36,7 +36,6 @@ class Products extends Component {
 
   render() {
 
-    console.log(this.props)
     const filterProducts = this.props.filteredProducts;
     const currentPage = this.state.currentPage;
     const sizePage = 5;
@@ -205,51 +204,15 @@ class Products extends Component {
         )}
 
         {this.state.product && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
-            <Zoom>
-              <button className={s.buttonClose} onClick={this.closeModal}>
-                X
-              </button>
-              <div className={s.productDetails}>
-                <img
-                  src={process.env.PUBLIC_URL + this.state.product.img}
-                  alt={this.state.product.title}
-                ></img>
-                <div className={s.productDetailsInfo}>
-                  <p>
-                    <strong>{this.state.product.title}</strong>
-                  </p>
-                  <p>{this.state.product.info}</p>
-                  Колір телефона:{" "}
-                  {this.state.product.color.map((color) => (
-                    <span>
-                      <button key={uniqid()} className={s.button}>
-                        {color}
-                      </button>
-                    </span>
-                  ))}
-                  <div className={s.productPrice}>
-                    <div>{formatCurrency(this.state.product.price)}</div>
-
-                    <button
-                      onClick={() => {
-                        this.props.addToCart(this.state.product);
-                        this.closeModal();
-                      }}
-                      className={`${s.button} ${s.primary}`}
-                    ></button>
-                  </div>
-                </div>
-              </div>
-            </Zoom>
-          </Modal>
+        <ModalProduct product={this.state.product}
+        closeModal={this.closeModal}
+        addToCart={this.props.addToCart} />
         )}
         <div className={s.pagination}>
           <div>
             {pages.length > 1 &&
               pages.map((e) => {
-                console.log(currentPage);
-                console.log(e);
+             
                 return (
                   <span
                     className={currentPage == e && s.selectedPage}

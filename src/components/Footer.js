@@ -87,9 +87,9 @@ export default class Footer extends Component {
           </div>
           <div className={s.footerInfo}>
             <div>
-              <a className={s.title} href="#">
+              <Link className={s.title} to="/my-shop/guarantee/service">
                 Клієнтам
-              </a>
+              </Link>
               <ul>
                 <li>
                   <Link to="/my-shop/guarantee/service">
@@ -101,11 +101,9 @@ export default class Footer extends Component {
                     Доставка та оплата
                   </Link>
                 </li>
+           
                 <li>
-                  <Link to="/my-shop/blog"> Статті</Link>
-                </li>
-                <li>
-                  <Link to="/my-shop/contacts">Контакти</Link>
+                  <Link to="/my-shop/guarantee/contacts">Контакти</Link>
                 </li>
               </ul>
             </div>
@@ -220,10 +218,10 @@ export default class Footer extends Component {
               </ul>
             </div>
             <div className={s.location}>
-              <a href="#">
+              <Link to="/my-shop/guarantee/contacts">
                 <img src={ourShops} className={s.ourShops} alt="location" />
                 <span className={`${s.shops} ${s.title}`}>Наші магазини</span>
-              </a>
+              </Link>
               <ul>
                 <li>
                   <a href="#">м. Львів, вул. С. Петлюри, 32</a>

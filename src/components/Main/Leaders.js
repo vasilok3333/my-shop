@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Carousel from "react-elastic-carousel";
 import s from "./Main.module.css";
-import Card from "./Card";
 import formatCurrency from "../../util";
 import Modal from "react-modal";
-import Zoom from "react-reveal/Zoom";
-const uniqid = require("uniqid");
+import ModalProduct from "./ModalProduct";
+
 
 Modal.setAppElement("#root");
 
@@ -37,6 +36,22 @@ export default class Leaders extends Component {
   }
 
   render() {
+
+
+let compareItems = [];
+
+
+
+    for (let i = 0; i < this.props.compareProducts.length; i++) {
+      compareItems.push(this.props.compareProducts[i]._id)
+    }
+
+    let favouritesItems = [];
+    for (let i = 0; i < this.props.favouritesProducts.length; i++) {
+      favouritesItems.push(this.props.favouritesProducts[i]._id)
+    }
+    
+    
     return (
       <div className={s.leadersBox}>
         <h1 className={s.leadersTitle}>ТОП ПРОДАЖ</h1>
@@ -70,13 +85,21 @@ export default class Leaders extends Component {
                     <div className={`${s.actionBar} ${s.actionBarLeader} `}>
                       <a
                         onClick={(e) => {
-                          this.props.addToCompare(product);
+                        
+                          if ( compareItems.includes(product._id)){
+                            this.props.removeFromCompare(product._id)
+                          } else {
+                          this.props.addToCompare(product); }
                           e.preventDefault();
+                          
+                       
                         }}
                         href="#"
                       >
                         <svg
-                          className={`${s.icon} ${s.compareIcon} `}
+                          className={`${s.icon} ${s.compareIcon} ${
+                            compareItems.includes(product._id) ? s.activeIcon : null
+                          }`}
                           id="Outline"
                           height="20"
                           width="20"
@@ -91,13 +114,16 @@ export default class Leaders extends Component {
                       </a>
                       <a
                         onClick={(e) => {
-                          this.props.addToFavourite(product);
+                          if ( favouritesItems.includes(product._id)){
+                            this.props.removeFromFavourite(product._id)
+                          } else {
+                          this.props.addToFavourite(product); }
                           e.preventDefault();
                         }}
                         href="#"
                       >
                         <svg
-                          className={`${s.icon} ${s.favoriteIcon}`}
+                          className={`${s.icon} ${s.favoriteIcon}  ${favouritesItems.includes(product._id) && s.activeIcon} `}
                           version="1.1"
                           id="Layer_1"
                           xmlns="http://www.w3.org/2000/svg"
@@ -200,45 +226,11 @@ export default class Leaders extends Component {
           </ul>
         )}
         {this.state.product && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
-            <Zoom>
-              <button className={s.buttonClose} onClick={this.closeModal}>
-                X
-              </button>
-              <div className={s.productDetails}>
-                <img
-                  src={process.env.PUBLIC_URL + this.state.product.img}
-                  alt={this.state.product.title}
-                ></img>
-                <div className={s.productDetailsInfo}>
-                  <p>
-                    <strong>{this.state.product.title}</strong>
-                  </p>
-                  <p>{this.state.product.info}</p>
-                  Колір телефона:{" "}
-                  {this.state.product.color.map((color) => (
-                    <span>
-                      <button key={uniqid()} className={s.button}>
-                        {color}
-                      </button>
-                    </span>
-                  ))}
-                  <div className={s.productPrice}>
-                    <div>{formatCurrency(this.state.product.price)}</div>
-
-                    <button
-                      onClick={() => {
-                        this.props.addToCart(this.state.product);
-                        this.closeModal();
-                      }}
-                      className={`${s.button} ${s.primary}`}
-                    ></button>
-                  </div>
-                </div>
-              </div>
-            </Zoom>
-          </Modal>
-        )}
+          <ModalProduct product={this.state.product}
+          closeModal={this.closeModal}
+          addToCart={this.props.addToCart} />
+          )}
+        )
       </div>
     );
   }

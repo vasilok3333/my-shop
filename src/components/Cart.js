@@ -23,6 +23,9 @@ export default class Cart extends Component {
   closeModal() {
     this.props.clearOrder();
     this.props.clearCart();
+    this.setState({
+      showCartForm: false
+    })
   }
 
   handleInput(e) {
@@ -61,16 +64,13 @@ export default class Cart extends Component {
     const count = cartItems.reduce((a, c) => a + c.count, 0);
     return this.state.isShowCart ? (
       <div className={s.cartBox}>
+         <div className={s.cart}>
         
         {cartItems.length === 0 ? (
           <div className={`${s.cart} ${s.cartTitle}`}>Ваша корзина пуста</div>
         ) : (
           <div className={`${s.cart} ${s.cartTitle}`}>{`У Вас в корзині ${count}
-                   ${
-                     count.toString().split().pop() === "1"
-                       ? `телефон`
-                       : `телефонів`
-                   }`}</div>
+                   тел. `}</div>
         )}
         {order && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
@@ -116,27 +116,28 @@ export default class Cart extends Component {
             </Zoom>
           </Modal>
         )}
-        <div>
-          <div className={s.cart}>
+    <div>
+         
             <Fade right cascade>
               <ul className={s.cartItems}>
                 {cartItems.map((item) => (
                   <li key={item._id}>
-                    <div>
+                    <div className={s.cartImg}>
                       <img
                         src={process.env.PUBLIC_URL + item.img}
                         alt={item.title}
                       ></img>
+                       <div className={s.cartTitle}>{item.title}</div>
                     </div>
-                    <div>{item.title}</div>
+                   
                     <div className={s.right}>
-                      {formatCurrency(item.price)} X {item.count}
-                      <button
+                      <div className={s.itemsCount}>{formatCurrency(item.price)} X {item.count} </div>
+                      <div> <button
                         className={s.button}
                         onClick={() => removeFromCart(item._id)}
                       >
                         Видалити
-                      </button>
+                      </button> </div>
                     </div>
                   </li>
                 ))}
@@ -144,7 +145,7 @@ export default class Cart extends Component {
             </Fade>
           </div>
 
-          <div className={s.cart}>
+          <div className={`${s.cart}`}>
             <Fade right cascade>
               {cartItems.length > 0 ? (
                 <div className={s.total}>
@@ -163,12 +164,22 @@ export default class Cart extends Component {
                       }}
                       className={`${s.button} ${s.primary} `}
                     >
-                      Оплатити
+                     Замовити
                     </button>
-                  </div>
-                  {this.state.showCartForm && (
+                    </div>
+                   
+                
+                  
+                </div>
+              ) : (
+                "Не вибрано жодного телефону"
+              )}
+            </Fade>
+            </div>
+          </div>
+          {this.state.showCartForm && (
                     <Fade right cascade>
-                      <div className={s.cart}>
+                      <div className={`${s.cart}  ${s.aaa}`} >
                         <form onSubmit={this.createOrder}>
                           <ul className={s.formContainer}>
                             <li>
@@ -211,13 +222,7 @@ export default class Cart extends Component {
                       </div>
                     </Fade>
                   )}
-                </div>
-              ) : (
-                "Не вибрано жодного телефону"
-              )}
-            </Fade>
-          </div>
-        </div>
+       
       </div>
     ) : null;
   }

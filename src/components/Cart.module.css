@@ -1,16 +1,25 @@
  .cartBox {
    min-height: 355px;
+   width: 100%;
+   margin: 0 auto;
+   display: flex;
  }
  
  .cart {
   display: flex;
   padding: 1rem;
   margin: 1rem;
-  
+  flex-direction: column;
+  width: 65%;
+align-items: center;  
+}
+
+.aaa {
+  width: 30%;
 }
 
 .cartTitle {
-  border-bottom: 0.1rem solid rgb(201, 194, 194);
+  font-size: 14px;
 }
 
 .cartItems {
@@ -20,32 +29,64 @@
   text-align: center;
 }   
 
+.cartImg {
+  margin-right: 80%;;
+}
+
 .cartItems img {
   width: 7rem;
 }
 
 .cartItems li {
   display: flex;
+  justify-content: space-around;
+ 
+
 }
 
 .cartItems div {
   padding: 0.5rem;
 }
+
+.right {
+  display: flex;
+  justify-content: space-around;
+}
+
+.itemsCount {
+  margin-right: 10px;
+  width: 100px;
+}
+
+.modalProduct {
+  z-index: 3;
+}
+
+
+
+
+
+
 .button {
   padding: 1rem;
-  border: 0.1rem #c0c0c0 solid;
+  border-radius: 10px;
+  border: none;
+  outline: none;
   background-color: #f0f0f0;
   cursor: pointer;
   outline: none;
+  background-color: #FDBF00;
+  
+  color: black;
 }
 
 .button:hover {
-  border: 0.1rem #808080 solid;
+  box-shadow: 0px 0px 12px #FDBF00;
+  background-color:#464441;
+  color: #FDBF00;
 }
 
-.button.primary {
-  background-color: yellow;
-}
+
 
 .total {
   display: flex;
@@ -66,9 +107,18 @@
 
 
 .formContainer {
-    width: 100%;
+  margin: 0 auto;
+    width: 70%;
     padding: 0;
     list-style-type: none;
+  border-radius: 10px;
+    background-color: #464441;
+}
+
+.formContainer input {
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
 }
 
 .formContainer li {
