@@ -6,7 +6,7 @@ export default class Service extends Component {
         return (
             <div className={s.serviceBox}>
 
-                <h1 class="">Гарантія та сервіс</h1>
+                <h1>Гарантія та сервіс</h1>
                 <hr/>
                     
                 <p>На всі смартфони, куплені в нашому інтернет-магазині «<strong>Freedom-mobile</strong>», діє гарантія.</p>

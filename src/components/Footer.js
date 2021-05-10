@@ -232,7 +232,7 @@ export default class Footer extends Component {
                   <a href="#"> м. Золочів, Львівська обл., вул. Пушкіна, 3</a>
                 </li>
                 <li>
-                  <a href="#"> м. Тернопіль, вул. Івасюка, 12</a>
+                  <a href="#"> м. Тернопіль, вул. Замкова, 1 </a>
                 </li>
               </ul>
             </div>

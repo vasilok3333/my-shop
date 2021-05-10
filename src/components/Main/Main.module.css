@@ -39,6 +39,7 @@
 .sidebar {
   min-width: 20%;
   margin: 0 10px;
+
 }
 
 
@@ -51,10 +52,11 @@
   border: 1px solid rgb(201, 194, 194);
   padding: 50px;
   list-style-type: none;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   font-size: 20px;
   height: 500px;
+  background-color: #fff;
 }
 
 .sidebarMenu li a {

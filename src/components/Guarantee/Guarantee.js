@@ -4,12 +4,13 @@ import Service from "./Service";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Dostavka from "./Dostavka";
 import OurContacts from "./OurContacts";
+import Exchange from "./Exchange";
+
 
 export default class Guarantee extends Component {
   render() {
     return (
    
-    
           <div className={s.layoutBox}>
             <div className={s.layoutBox_textAside}>
               <ul>
@@ -19,11 +20,9 @@ export default class Guarantee extends Component {
                 <li>
                   <Link to="/my-shop/guarantee/dostavka">Доставка</Link>
                 </li>
+           
                 <li>
-                  <Link to="/my-shop/offer">Договір оферти</Link>
-                </li>
-                <li>
-                  <Link to="/my-shop/exchange">Обмін та повернення</Link>
+                  <Link to="/my-shop/guarantee/exchange">Обмін та повернення</Link>
                 </li>
                 <li>
                   <Link to="/my-shop/guarantee/contacts">Контакти</Link>
@@ -36,8 +35,8 @@ export default class Guarantee extends Component {
                 <Service />
               </Route>
               <Route exact path="/my-shop/guarantee/dostavka"><Dostavka /></Route>
-              <Route exact path="/my-shop/offer"></Route>
-              <Route exact path="/my-shop/exchange"></Route>
+         
+              <Route exact path="/my-shop/guarantee/exchange">< Exchange /></Route>
               <Route exact path="/my-shop/guarantee/contacts"> < OurContacts isMarkerShown  /></Route>
             </div>
             </Switch>

@@ -59,7 +59,7 @@ class OurContacts extends Component {
                   <a href="#"> м. Золочів, Львівська обл., вул. Пушкіна, 3</a>
                 </li>
                 <li>
-                  <a href="#"> м. Тернопіль, вул. Івасюка, 12</a>
+                  <a href="#"> м. Тернопіль, вул. Замкова, 1</a>
                 </li>
               </ul>
             </div>
@@ -83,9 +83,11 @@ class Map extends Component {
     return (
       <GoogleMap
         defaultZoom={8}
-        defaultCenter={{ lat: 49.839684, lng: 24.029716 }}
+        defaultCenter={{  lat: 49.806672, lng: 24.897362 }}
       >
-        <Marker position={{ lat: 49.806537, lng: 24.8977 }} />
+        <Marker position={{ lat: 49.820964, lng: 23.979620}} />
+        <Marker position={{ lat: 49.806672, lng: 24.897362 }} />
+        <Marker position={{ lat: 49.554435, lng: 25.590569 }} />
       </GoogleMap>
     );
   }
