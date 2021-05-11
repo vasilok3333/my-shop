@@ -118,7 +118,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 11,
@@ -130,7 +130,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 12,
@@ -142,7 +142,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 13,
@@ -154,7 +154,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 14,
@@ -166,7 +166,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 15,
@@ -178,7 +178,7 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "top": true
    },   
    {
       "_id": 16,
@@ -190,21 +190,9 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
-   },
-   {
-      "_id": 17,
-      "title": "Iphone 11",
-      "img": "/img/Iphone11.png",
-      "price": 200,
-      "company": "apple",
-      "info": "Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
-      "inCart": false,
-      "count": 0,
-      "total": 0,
-      "color": ["green", "black", "white"],
       "top": true
    }
+   
  ]
 
 }

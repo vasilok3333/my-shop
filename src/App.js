@@ -95,6 +95,7 @@ class App extends React.Component {
                   removeFromFavourite={this.props.removeFromFavourite}
                   favouritesProducts={this.props.favouritesProducts}
                   compareProducts={this.props.compareProducts}
+                  items = {this.props.items}
                 />{" "}
               </main>
             </Route>
@@ -127,6 +128,7 @@ const mapStateToProps = (state) => ({
   login: state.form.login,
   favouritesProducts: state.products.favouritesProducts,
   compareProducts: state.products.compareProducts,
+  items: state.products.items
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -77,6 +77,7 @@ class Main extends Component {
           removeFromCompare={this.props.removeFromCompare}
           favouritesProducts={this.props.favouritesProducts}
           removeFromFavourite={this.props.removeFromFavourite}
+          items = {this.props.items}
         />
       </div>
     );

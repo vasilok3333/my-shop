@@ -56,10 +56,10 @@ let compareItems = [];
       <div className={s.leadersBox}>
         <h1 className={s.leadersTitle}>ТОП ПРОДАЖ</h1>
 
-        {this.props.filteredProducts && (
+        {this.props.items && (
           <ul className={s.products}>
             <Carousel breakPoints={this.breakPoints}>
-              {this.props.filteredProducts.map((product) => (
+              {this.props.items.filter(item => item.top === true).map((product) => (
                 <li key={product._id}>
                   <div className={`${s.product} ${s.productLeader}`}>
                     <a

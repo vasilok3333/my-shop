@@ -105,11 +105,6 @@ background-color: #fff;
   fill:white;
 }
 
-
-
-
-
-
 .leadersTitle {
   font-size: 30px;
   font-weight: 600;
@@ -125,22 +120,14 @@ background-color: rgb(233, 240, 240);
 border-radius: 20px;
 max-height: 300px;
 overflow: hidden;
-
 }
-
-
 
 .titleLeader {
     display: flex;
     justify-content: space-around;
 }
 
-
-
 /* Products */
-
-
-
 
   .Modal {
     position: absolute;
@@ -151,7 +138,6 @@ overflow: hidden;
     width: 700px;
     border-radius: 20px;
     padding: 20px;
-
   }
 
 
@@ -219,12 +205,12 @@ overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-height: 96vh;
+    max-height: 76vh;
 }
 
 .productDetails img {
     max-width: 46rem;
-    max-height: 100vh;
+    max-height: 36vh;
     margin: 0 auto;
 }
 
