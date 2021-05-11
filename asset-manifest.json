@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-shop/static/css/main.d817aba9.chunk.css",
+    "main.css": "/my-shop/static/css/main.21c5589d.chunk.css",
     "main.js": "/my-shop/static/js/main.4dbb8a71.chunk.js",
     "main.js.map": "/my-shop/static/js/main.4dbb8a71.chunk.js.map",
     "runtime-main.js": "/my-shop/static/js/runtime-main.9eb91e14.js",
@@ -10,7 +10,7 @@
     "static/js/2.e7bccfea.chunk.js.map": "/my-shop/static/js/2.e7bccfea.chunk.js.map",
     "index.html": "/my-shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.d817aba9.chunk.css.map": "/my-shop/static/css/main.d817aba9.chunk.css.map",
+    "static/css/main.21c5589d.chunk.css.map": "/my-shop/static/css/main.21c5589d.chunk.css.map",
     "static/js/2.e7bccfea.chunk.js.LICENSE.txt": "/my-shop/static/js/2.e7bccfea.chunk.js.LICENSE.txt",
     "static/media/POCCO.aad8709d.png": "/my-shop/static/media/POCCO.aad8709d.png",
     "static/media/REDMI.a2c41ea2.png": "/my-shop/static/media/REDMI.a2c41ea2.png",
@@ -29,7 +29,7 @@
     "static/js/runtime-main.9eb91e14.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.e7bccfea.chunk.js",
-    "static/css/main.d817aba9.chunk.css",
+    "static/css/main.21c5589d.chunk.css",
     "static/js/main.4dbb8a71.chunk.js"
   ]
 }
