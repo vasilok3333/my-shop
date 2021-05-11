@@ -1,30 +1,35 @@
 {
   "files": {
-    "main.css": "/my-shop/static/css/main.7215b089.chunk.css",
-    "main.js": "/my-shop/static/js/main.b8559f30.chunk.js",
-    "main.js.map": "/my-shop/static/js/main.b8559f30.chunk.js.map",
+    "main.css": "/my-shop/static/css/main.d817aba9.chunk.css",
+    "main.js": "/my-shop/static/js/main.4dbb8a71.chunk.js",
+    "main.js.map": "/my-shop/static/js/main.4dbb8a71.chunk.js.map",
     "runtime-main.js": "/my-shop/static/js/runtime-main.9eb91e14.js",
     "runtime-main.js.map": "/my-shop/static/js/runtime-main.9eb91e14.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/my-shop/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.20f79c3a.chunk.js": "/my-shop/static/js/2.20f79c3a.chunk.js",
-    "static/js/2.20f79c3a.chunk.js.map": "/my-shop/static/js/2.20f79c3a.chunk.js.map",
+    "static/js/2.e7bccfea.chunk.js": "/my-shop/static/js/2.e7bccfea.chunk.js",
+    "static/js/2.e7bccfea.chunk.js.map": "/my-shop/static/js/2.e7bccfea.chunk.js.map",
     "index.html": "/my-shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/my-shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.7215b089.chunk.css.map": "/my-shop/static/css/main.7215b089.chunk.css.map",
-    "static/js/2.20f79c3a.chunk.js.LICENSE.txt": "/my-shop/static/js/2.20f79c3a.chunk.js.LICENSE.txt",
+    "static/css/main.d817aba9.chunk.css.map": "/my-shop/static/css/main.d817aba9.chunk.css.map",
+    "static/js/2.e7bccfea.chunk.js.LICENSE.txt": "/my-shop/static/js/2.e7bccfea.chunk.js.LICENSE.txt",
     "static/media/POCCO.aad8709d.png": "/my-shop/static/media/POCCO.aad8709d.png",
     "static/media/REDMI.a2c41ea2.png": "/my-shop/static/media/REDMI.a2c41ea2.png",
     "static/media/REDMI10.6b2e457c.png": "/my-shop/static/media/REDMI10.6b2e457c.png",
     "static/media/galaxyA.99e28715.png": "/my-shop/static/media/galaxyA.99e28715.png",
+    "static/media/honorLogo.4bb50008.png": "/my-shop/static/media/honorLogo.4bb50008.png",
+    "static/media/htcLogo.cf4b55e5.jpg": "/my-shop/static/media/htcLogo.cf4b55e5.jpg",
     "static/media/location.1636acf4.png": "/my-shop/static/media/location.1636acf4.png",
     "static/media/logo.b865d97e.png": "/my-shop/static/media/logo.b865d97e.png",
+    "static/media/motorolaLogo.c34a84e3.png": "/my-shop/static/media/motorolaLogo.c34a84e3.png",
+    "static/media/oppoLogo.f7db661b.jpg": "/my-shop/static/media/oppoLogo.f7db661b.jpg",
+    "static/media/redmiLogo.a63e8806.jpg": "/my-shop/static/media/redmiLogo.a63e8806.jpg",
     "static/media/sale.a2e0b019.jpg": "/my-shop/static/media/sale.a2e0b019.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9eb91e14.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.20f79c3a.chunk.js",
-    "static/css/main.7215b089.chunk.css",
-    "static/js/main.b8559f30.chunk.js"
+    "static/js/2.e7bccfea.chunk.js",
+    "static/css/main.d817aba9.chunk.css",
+    "static/js/main.4dbb8a71.chunk.js"
   ]
 }
