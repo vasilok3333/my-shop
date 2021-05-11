@@ -48,6 +48,18 @@ class Products extends Component {
       pages.push(i);
     }
 
+    let compareItems = [];
+
+
+
+    for (let i = 0; i < this.props.compareProducts.length; i++) {
+      compareItems.push(this.props.compareProducts[i]._id)
+    }
+
+    let favouritesItems = [];
+    for (let i = 0; i < this.props.favouritesProducts.length; i++) {
+      favouritesItems.push(this.props.favouritesProducts[i]._id)
+    }
     return (
       <div>
         {}
@@ -128,12 +140,17 @@ class Products extends Component {
                       </div>
                       <div className={s.actionBar}>
                         <a onClick={(e) => {
-                        this.props.addToCompare(product);
-                        e.preventDefault();
+                          if ( compareItems.includes(product._id)){
+                            this.props.removeFromCompare(product._id)
+                          } else {
+                          this.props.addToCompare(product); }
+                          e.preventDefault();
                         }}
                         href="#">
                           <svg
-                            className={`${s.icon} ${s.compareIcon}`}
+                            className={`${s.icon} ${s.compareIcon} ${
+                              compareItems.includes(product._id) ? s.activeIcon : null
+                            }`}
                             id="Outline"
                             height="20"
                             width="20"
@@ -148,13 +165,16 @@ class Products extends Component {
                         </a>
                         <a
                           onClick={(e) => {
-                            this.props.addToFavourite(product);
+                            if ( favouritesItems.includes(product._id)){
+                              this.props.removeFromFavourite(product._id)
+                            } else {
+                            this.props.addToFavourite(product); }
                             e.preventDefault();
                           }}
                           href="#"
                         >
                           <svg
-                            className={`${s.icon} ${s.favoriteIcon}`}
+                            className={`${s.icon} ${s.favoriteIcon} ${favouritesItems.includes(product._id) && s.activeIcon}`}
                             version="1.1"
                             id="Layer_1"
                             xmlns="http://www.w3.org/2000/svg"

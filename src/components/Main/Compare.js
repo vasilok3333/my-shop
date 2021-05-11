@@ -13,24 +13,20 @@ class Compare extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+  openModal(product) {
+    this.setState({ product });
+  }
 
-
-    openModal(product) {
-      this.setState({ product });
-    }
-  
-    closeModal() {
-      this.setState({ product: null });
-    }
-
+  closeModal() {
+    this.setState({ product: null });
+  }
 
   render() {
-
     let favouritesItems = [];
     for (let i = 0; i < this.props.favouritesProducts.length; i++) {
-      favouritesItems.push(this.props.favouritesProducts[i]._id)
+      favouritesItems.push(this.props.favouritesProducts[i]._id);
     }
-    
+
     return (
       <div className={s.compareBox}>
         <div className={s.compareTitle}>
@@ -64,16 +60,19 @@ class Compare extends Component {
                   <div className={`${s.actionBar} `}>
                     <a
                       onClick={(e) => {
-                        if ( favouritesItems.includes(product._id)){
-                          this.props.removeFromFavourite(product._id)
+                        if (favouritesItems.includes(product._id)) {
+                          this.props.removeFromFavourite(product._id);
                         } else {
-                        this.props.addToFavourite(product); }
+                          this.props.addToFavourite(product);
+                        }
                         e.preventDefault();
                       }}
                       href="#"
                     >
                       <svg
-                        className={`${s.icon} ${s.favoriteIcon}  ${favouritesItems.includes(product._id) && s.activeIcon}`}
+                        className={`${s.icon} ${s.favoriteIcon}  ${
+                          favouritesItems.includes(product._id) && s.activeIcon
+                        }`}
                         version="1.1"
                         id="Layer_1"
                         xmlns="http://www.w3.org/2000/svg"
@@ -194,15 +193,10 @@ class Compare extends Component {
                     </a>
                   </div>
                   <div className={s.specifications}>
-                    <div>camera</div>
-                    <div>memory</div>
-                    <div>batery</div>
-                    <div>camera</div>
-                    <div>width</div>
-                    <div>height</div>
-                    <div>camera</div>
-                    <div>memory</div>
-                    <div>batery</div>
+                    <div> Память: {product.memory} </div>
+                    <div> Камера: {product.camera}</div>
+                    <div> Екран: {product.screen}</div>
+                    <div> NFC: {product.nfc}</div>
                   </div>
                 </div>
               </li>
@@ -214,10 +208,12 @@ class Compare extends Component {
           </div>
         )}
         {this.state.product && (
-          <ModalProduct product={this.state.product}
-          closeModal={this.closeModal}
-          addToCart={this.props.addToCart} />
-          )}
+          <ModalProduct
+            product={this.state.product}
+            closeModal={this.closeModal}
+            addToCart={this.props.addToCart}
+          />
+        )}
         )
       </div>
     );

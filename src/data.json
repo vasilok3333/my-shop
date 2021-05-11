@@ -10,7 +10,12 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
+       
     },   
     {
        "_id": 2,
@@ -22,7 +27,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },   
     {
        "_id": 3,
@@ -34,7 +43,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },   
     {
        "_id": 4,
@@ -46,7 +59,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },   
     {
        "_id": 5,
@@ -58,7 +75,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },   
     {
        "_id": 6,
@@ -70,7 +91,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },   
     {
        "_id": 7,
@@ -82,7 +107,12 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
+
     },   
     {
        "_id": 8,
@@ -94,7 +124,11 @@
        "inCart": false,
        "count": 0,
        "total": 0,
-       "color": ["green", "black", "white"]
+       "color": ["green", "black", "white"],
+       "memory": "128GB",
+       "camera": "16Мп",
+       "screen": "6.5",
+       "nfc": "Так"
     },
     {
       "_id": 9,
@@ -106,7 +140,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "color": ["green", "black", "white"]
+      "color": ["green", "black", "white"],
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 10,
@@ -118,7 +156,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 11,
@@ -130,7 +172,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 12,
@@ -142,7 +188,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 13,
@@ -154,7 +204,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 14,
@@ -166,7 +220,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 15,
@@ -178,7 +236,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    },   
    {
       "_id": 16,
@@ -190,7 +252,11 @@
       "inCart": false,
       "count": 0,
       "total": 0,
-      "top": true
+      "top": true,
+      "memory": "128GB",
+      "camera": "16Мп",
+      "screen": "6.5",
+      "nfc": "Так"
    }
    
  ]

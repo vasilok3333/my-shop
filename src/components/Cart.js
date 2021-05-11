@@ -73,31 +73,32 @@ export default class Cart extends Component {
                    тел. `}</div>
         )}
         {order && (
-          <Modal isOpen={true} onRequestClose={this.closeModal}>
+          <Modal   className={s.Modal}
+          overlayClassName={s.Overlay} isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
-              <button className={s.closeModal} onClick={this.closeModal}>
+              <button className={s.buttonClose} onClick={this.closeModal}>
                 X
               </button>
               <div className={s.orderDetails}>
                 <div className={s.succesMessage}>
                   <h3>Ваше замовлення успішно оброблено</h3>
-                  <h2>Order {order._id}</h2>
+                
                   <ul>
                     <li>
-                      <div>Name:</div>
+                      <div>Ім"я:</div>
                       <div>{order.name}</div>
                     </li>
                     <li>
-                      <div>Email:</div>
+                      <div>Електронна пошта:</div>
                       <div>{order.email}</div>
                     </li>
                     <li>
-                      <div>Address:</div>
+                      <div>Адреса:</div>
                       <div>{order.address}</div>
                     </li>
 
                     <li>
-                      <div>CartItems:</div>
+                      <div>Замовлений товар:</div>
                       <div>
                         {order.cartItems.map((item) => (
                           <div key={item._id}>
@@ -107,7 +108,7 @@ export default class Cart extends Component {
                       </div>
                     </li>
                     <li>
-                      <div>Total:</div>
+                      <div>Сума до оплати:</div>
                       <div>{order.total} $</div>
                     </li>
                   </ul>

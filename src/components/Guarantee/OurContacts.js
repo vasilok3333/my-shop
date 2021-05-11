@@ -65,11 +65,11 @@ class OurContacts extends Component {
             </div>
         </div>
 
-        <div style={{ width: "40vw", height: "60vh" }}>
+        <div style={{ width: "40vw", height: "50vh" }}>
           <MapWithAMarker
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places&key=${url}`}
             loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `400px` }} />}
+            containerElement={<div style={{ height: `320px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
           />
         </div>

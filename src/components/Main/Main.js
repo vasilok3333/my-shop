@@ -59,6 +59,10 @@ class Main extends Component {
                 data={this.props.data}
                 addToFavourite={this.props.addToFavourite}
                 addToCompare={this.props.addToCompare}
+                favouritesProducts={this.props.favouritesProducts}
+                compareProducts={this.props.compareProducts}
+                removeFromFavourite={this.props.removeFromFavourite}
+                removeFromCompare={this.props.removeFromCompare}
               />
             </div>
           </Route>
