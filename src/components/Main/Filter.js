@@ -7,14 +7,14 @@ export default class Filter extends Component {
       <div className={s.filter}>
       
         <div className={s.filterSort}>
-          Сортвати за цінами{" "}
+          Сортувати за цінами{" "}
           <select
             value={this.props.sort}
             onChange={(e) => this.props.sortProducts(e.target.value)}
           >
-            <option value="latest">вибірково</option>
-            <option value="lowest">дешевші</option>
-            <option value="highest">дорожчі</option>
+            <option value="latest">рандомно</option>
+            <option value="lowest">від дешевших до дорожчих</option>
+            <option value="highest">від дорожчих до дешевших</option>
           </select>
         </div>
        
