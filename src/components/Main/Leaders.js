@@ -230,7 +230,7 @@ let compareItems = [];
           closeModal={this.closeModal}
           addToCart={this.props.addToCart} />
           )}
-        )
+        
       </div>
     );
   }
